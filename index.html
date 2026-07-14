@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京中晓律师事务所</title>
+    <meta name="description" content="北京中晓律师事务所 — 专注于不良资产并购重组与处置、金融业务、公司法律顾问、民商事诉讼与仲裁。由华展资产发起设立，近三年累计处置债权超20亿元。">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="canonical" href="https://中晓律师事务所.com">
+
+    <!-- Open Graph / 社交分享 -->
+    <meta property="og:title" content="北京中晓律师事务所">
+    <meta property="og:description" content="专注于不良资产处置、金融业务、公司法律顾问。近三年累计处置债权超20亿元。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://中晓律师事务所.com">
+    <meta property="og:image" content="https://中晓律师事务所.com/logo.png">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- JSON-LD 结构化数据（律所信息） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "北京中晓律师事务所",
+      "description": "由华展资产发起设立的合伙制律师事务所，专注于不良资产并购重组与处置、金融业务、公司法律顾问及民商事诉讼。",
+      "url": "https://中晓律师事务所.com",
+      "logo": "https://中晓律师事务所.com/logo.png",
+      "founder": {
+        "@type": "Organization",
+        "name": "华展资产"
+      },
+      "foundingDate": "2020-01",
+      "legalName": "北京中晓律师事务所",
+      "areaServed": {
+        "@type": "City",
+        "name": "北京"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "光华路甲14号诺安基金大厦11层",
+        "addressLocality": "朝阳区",
+        "addressRegion": "北京市",
+        "addressCountry": "CN",
+        "postalCode": "100020"
+      },
+      "telephone": "13522711878",
+      "email": "534818861@qq.com",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            color: #333;
+            background: #fff;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+            height: 76px;
+            transition: box-shadow 0.3s;
+        }
+        .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 76px;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 12px;
+        }
+        .logo-img {
+            height: 46px; width: auto;
+            border-radius: 4px;
+        }
+        .logo-text {
+            font-size: 20px; font-weight: 700; color: #1a1a1a;
+            letter-spacing: 2px;
+        }
+        .logo-sub {
+            font-size: 11px; color: #999; letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* ===== Navigation ===== */
+        .nav { display: flex; gap: 4px; }
+        .nav a {
+            padding: 8px 18px;
+            font-size: 15px; color: #444;
+            border-radius: 6px;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .nav a:hover,
+        .nav a.active { color: #9c231b; background: rgba(156,35,27,0.06); }
+        .nav a::after {
+            content: ''; position: absolute; bottom: -2px; left: 50%;
+            width: 0; height: 2px;
+            background: #9c231b; border-radius: 2px;
+            transition: all 0.3s; transform: translateX(-50%);
+        }
+        .nav a:hover::after,
+        .nav a.active::after { width: 60%; }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer;
+            padding: 8px;
+        }
+        .menu-toggle span {
+            display: block; width: 24px; height: 2px;
+            background: #333; border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            margin-top: 76px;
+            height: 620px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex; align-items: center;
+        }
+        .hero::before {
+            content: ''; position: absolute;
+            top: -50%; right: -20%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(192,57,43,0.15) 0%, transparent 70%);
+        }
+        .hero::after {
+            content: ''; position: absolute;
+            bottom: -30%; left: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            color: #fff; max-width: 700px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 16px; border-radius: 20px;
+            font-size: 13px; color: rgba(255,255,255,0.8);
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+        .hero h1 {
+            font-size: 48px; font-weight: 700;
+            line-height: 1.25; margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        .hero h1 span { color: #e74c3c; }
+        .hero p {
+            font-size: 17px; color: rgba(255,255,255,0.75);
+            line-height: 1.8; margin-bottom: 36px;
+            max-width: 560px;
+        }
+        .hero-buttons { display: flex; gap: 16px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 8px;
+            font-size: 15px; font-weight: 600;
+            transition: all 0.3s; cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: #c0392b; color: #fff;
+        }
+        .btn-primary:hover {
+            background: #a93226; transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(192,57,43,0.3);
+        }
+        .btn-outline {
+            background: transparent; color: #fff;
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+        .btn-outline:hover {
+            border-color: #c0392b; background: rgba(192,57,43,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ===== Section Common ===== */
+        .section { padding: 90px 0; }
+        .section-header {
+            text-align: center; margin-bottom: 60px;
+        }
+        .section-header h2 {
+            font-size: 32px; font-weight: 700; color: #1a1a1a;
+            letter-spacing: 2px; margin-bottom: 8px;
+        }
+        .section-header .en-sub {
+            font-size: 13px; color: #aaa; letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        .section-header .divider {
+            width: 60px; height: 3px;
+            background: #c0392b; border-radius: 3px;
+            margin: 16px auto 0;
+        }
+
+        /* ===== About ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .about-image {
+            border-radius: 12px; overflow: hidden;
+            background: #f5f5f5;
+            height: 420px;
+            display: flex; align-items: center; justify-content: center;
+            color: #ccc; font-size: 14px;
+            position: relative;
+        }
+        .about-image .placeholder {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #f8f8f8, #eee);
+            color: #bbb; font-size: 16px;
+        }
+        .about-image .placeholder svg { width: 64px; height: 64px; margin-bottom: 12px; opacity: 0.3; }
+        .about-text h3 {
+            font-size: 24px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: #666; line-height: 2;
+            font-size: 15px; margin-bottom: 16px;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px; margin-top: 36px;
+        }
+        .about-stat {
+            text-align: center; padding: 20px;
+            background: #f8f8f8; border-radius: 12px;
+        }
+        .about-stat .num {
+            font-size: 32px; font-weight: 700; color: #c0392b;
+            line-height: 1;
+        }
+        .about-stat .label {
+            font-size: 13px; color: #999; margin-top: 8px;
+        }
+        .btn-about {
+            margin-top: 32px;
+            display: inline-flex; align-items: center; gap: 6px;
+            color: #c0392b; font-weight: 600; font-size: 15px;
+            padding: 10px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .btn-about:hover { border-bottom-color: #c0392b; }
+
+        /* ===== Practice Areas ===== */
+        .section-practice { background: #f8f9fb; }
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .practice-card {
+            background: #fff; border-radius: 12px;
+            padding: 36px 28px;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+            cursor: default;
+        }
+        .practice-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            border-color: #c0392b;
+        }
+        .practice-card .icon {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, #9c231b, #c0392b);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; color: #fff;
+            margin-bottom: 20px;
+        }
+        .practice-card h4 {
+            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .practice-card p {
+            font-size: 14px; color: #777;
+            line-height: 1.8;
+        }
+
+        /* ===== Team ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+        .team-card {
+            text-align: center; border-radius: 12px;
+            padding: 32px 20px 24px;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+        .team-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            border-color: #ddd;
+        }
+        .team-card .photo {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            object-fit: cover;
+            border: 3px solid #f0f0f0;
+        }
+        .team-card h4 {
+            font-size: 17px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .team-card .title {
+            font-size: 13px; color: #c0392b; font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .team-card p {
+            font-size: 13px; color: #888;
+            line-height: 1.6;
+        }
+
+        /* ===== SVG Icons ===== */
+        .icon-svg {
+            width: 1em; height: 1em;
+            vertical-align: -0.125em;
+            fill: currentColor;
+            flex-shrink: 0;
+            display: inline-block;
+        }
+        .icon-lg { width: 1.5em; height: 1.5em; }
+        .icon-xl { width: 28px; height: 28px; }
+
+        /* ===== News/Articles ===== */
+        .section-news { background: #f8f9fb; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .news-column h5 {
+            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .news-column h5::before {
+            content: ''; display: inline-block;
+            width: 4px; height: 18px;
+            background: #c0392b; border-radius: 4px;
+        }
+        .news-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.2s;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item:hover { padding-left: 8px; }
+        .news-item a {
+            display: block;
+        }
+        .news-item .date {
+            font-size: 12px; color: #aaa; margin-bottom: 6px;
+        }
+        .news-item h6 {
+            font-size: 15px; font-weight: 600; color: #333;
+            line-height: 1.5; margin-bottom: 6px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-item h6:hover { color: #c0392b; }
+        .news-item .summary {
+            font-size: 13px; color: #888;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ===== Contact ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .contact-info h4 {
+            font-size: 20px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        .contact-item {
+            display: flex; gap: 16px; margin-bottom: 20px;
+        }
+        .contact-item .ci-icon {
+            width: 44px; height: 44px; min-width: 44px;
+            background: #f0f0f0; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .contact-item .ci-label {
+            font-size: 13px; color: #999; margin-bottom: 2px;
+        }
+        .contact-item .ci-value {
+            font-size: 15px; color: #333; font-weight: 500;
+        }
+        .contact-form {
+            background: #f8f9fb; padding: 36px 32px;
+            border-radius: 12px;
+        }
+        .contact-form h4 {
+            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-group input,
+        .form-group textarea {
+            width: 100%; padding: 12px 16px;
+            border: 1.5px solid #e0e0e0; border-radius: 8px;
+            font-size: 14px; font-family: inherit;
+            transition: border-color 0.2s;
+            background: #fff;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none; border-color: #c0392b;
+        }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: #c0392b; color: #fff;
+            border: none; border-radius: 8px;
+            font-size: 15px; font-weight: 600;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .btn-submit:hover { background: #a93226; }
+
+        /* ===== Map placeholder ===== */
+        .map-section {
+            height: 350px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: #1a1a2e; color: #fff;
+            padding: 50px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px;
+        }
+        .footer h4 {
+            font-size: 16px; font-weight: 700;
+            margin-bottom: 16px; color: #fff;
+        }
+        .footer p, .footer a {
+            font-size: 14px; color: rgba(255,255,255,0.6);
+            line-height: 2;
+        }
+        .footer a:hover { color: #e74c3c; }
+        .footer .qr { margin-top: 16px; }
+        .footer .qr img {
+            width: 100px; height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.3); font-size: 11px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex; justify-content: space-between;
+            font-size: 13px; color: rgba(255,255,255,0.4);
+        }
+
+        /* ===== Scroll to top ===== */
+        .scroll-top {
+            position: fixed; bottom: 32px; right: 32px;
+            width: 44px; height: 44px;
+            background: #c0392b; color: #fff;
+            border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer;
+            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+            opacity: 0; visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { transform: translateY(-3px); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 968px) {
+            .about-grid,
+            .contact-grid,
+            .news-grid { grid-template-columns: 1fr; gap: 40px; }
+            .practice-grid { grid-template-columns: 1fr 1fr; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 36px; }
+            .hero { height: 500px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav {
+                position: fixed; top: 76px; left: 0; right: 0;
+                background: #fff; flex-direction: column;
+                padding: 16px; gap: 0;
+                border-bottom: 1px solid #eee;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+                transform: translateY(-120%);
+                transition: transform 0.3s;
+                z-index: 99;
+            }
+            .nav.open { transform: translateY(0); }
+            .nav a {
+                padding: 14px 16px;
+                border-bottom: 1px solid #f0f0f0;
+                border-radius: 0;
+            }
+            .nav a:last-child { border-bottom: none; }
+            .practice-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 28px; letter-spacing: 1px; }
+            .hero p { font-size: 15px; }
+            .hero-buttons { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; justify-content: center; }
+            .section { padding: 60px 0; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="中晓律师事务所" class="logo-img">
+            <div>
+                <div class="logo-text">中晓律师事务所</div>
+                <div class="logo-sub">ZHONGXIAO LAW FIRM</div>
+            </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="nav">
+            <a href="#hero" class="active">首页</a>
+            <a href="#about">关于中晓</a>
+            <a href="#practice">业务领域</a>
+            <a href="#team">律师团队</a>
+            <a href="#news">律所资讯</a>
+            <a href="#contact">联系我们</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="hero">
+    <div class="container hero-content">
+        <div class="hero-badge"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="margin-right:4px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 北京 · 专业法律服务机构</div>
+        <h1>以法律之盾<br>守护您的<span>权益</span></h1>
+        <p>北京中晓律师事务所汇聚各领域资深律师，致力于为客户提供全方位、高品质的法律服务。专业、诚信、高效——是我们不变的承诺。</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="margin-right:4px"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> 免费咨询</a>
+            <a href="#about" class="btn btn-outline">了解我们 →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>关于中晓</h2>
+            <div class="en-sub">ABOUT US</div>
+            <div class="divider"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                    <span>律所形象图（待替换）</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>法律与资本相结合</h3>
+                <p>北京中晓律师事务所（以下简称"中晓"）由华展资产于2020年1月发起设立，是一家经北京市司法局批准设立的合伙制律师事务所。自成立伊始，中晓秉持法律与资本相结合的商业理念，致力于为客户提供专业、高效的法律服务。</p>
+                <p>中晓实行公司制运行模式，内设多个专业团队，业务领域涵盖金融业务、公司类综合业务及民商事诉讼仲裁法律业务等。其中，金融板块中的不良资产并购重组及处置业务是中晓的核心竞争力。律师团队已连续十年为国内知名商业银行、信托、典当及小额贷款公司等机构提供不良债权的重组和处置服务，近三年内累计处置债权本金金额超过20亿元，本金清偿率超过100%。</p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <div class="num">20亿+</div>
+                        <div class="label">年均处置债权</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="num">100%+</div>
+                        <div class="label">本金清偿率</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="num">10年+</div>
+                        <div class="label">行业深耕</div>
+                    </div>
+                </div>
+                <a href="#practice" class="btn-about">了解业务领域 →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Practice Areas ===== -->
+<section class="section section-practice" id="practice">
+    <div class="container">
+        <div class="section-header">
+            <h2>业务领域</h2>
+            <div class="en-sub">PRACTICE AREAS</div>
+            <div class="divider"></div>
+        </div>
+        <div class="practice-grid">
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M15 9h-4a2 2 0 100 4h2a2 2 0 110 4H9"/><path d="M12 7v2m0 6v2"/></svg></div>
+                <h4>不良资产并购重组与处置</h4>
+                <p>银行、信托、典当及小额贷款公司不良债权的尽职调查、定价、收购、重组及清收处置，近三年累计处置债权本金超20亿元。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21V10h6v11"/><path d="M7 10h2m6 0h2"/></svg></div>
+                <h4>金融业务</h4>
+                <p>为商业银行、信托公司、资产管理公司等金融机构提供债权重组、资产证券化、金融合规等全流程法律服务。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 6h2v2H9zm4 0h2v2h-2zM9 10h2v2H9zm4 0h2v2h-2zM9 14h2v2H9zm4 0h2v2h-2z"/></svg></div>
+                <h4>公司类综合业务</h4>
+                <p>企业常年法律顾问、公司治理与合规、股权架构设计与并购重组、合同审查、劳动争议处理等。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M8 21h8"/><path d="M3 7l3 3 3-3M15 7l3 3 3-3"/><path d="M6 10V4m12 6V4"/></svg></div>
+                <h4>民商事诉讼与仲裁</h4>
+                <p>合同纠纷、债权债务、股权争议、房地产纠纷等各类民商事诉讼与仲裁案件代理。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M6 20V4h12v16"/><path d="M10 8h4v4h-4zm0 8h4v4h-4z"/></svg></div>
+                <h4>房地产与建设工程</h4>
+                <p>房屋抵押贷款不良债权处置、房地产开发经营、建设工程施工合同纠纷等全程法律服务。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 118 0v4"/><circle cx="12" cy="16" r="1.5"/></svg></div>
+                <h4>司法辅助与法拍</h4>
+                <p>依托阿里资产北京线下服务资源，提供司法拍卖辅助、资产清退、执行代理等全流程法律服务。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Team ===== -->
+<section class="section" id="team">
+    <div class="container">
+        <div class="section-header">
+            <h2>律师团队</h2>
+            <div class="en-sub">OUR TEAM</div>
+            <div class="divider"></div>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="薛家涛.jpg" alt="薛家涛律师" class="photo">
+                <h4>薛家涛</h4>
+                <div class="title">高级合伙人、执行主任</div>
+                <p>中国政法大学硕士研究生，2010年通过司法考试。擅长民商领域法务业务，为多家上市公司、集团公司提供法律服务。</p>
+            </div>
+            <div class="team-card">
+                <img src="孙国华.jpg" alt="孙国华律师" class="photo">
+                <h4>孙国华</h4>
+                <div class="title">律师</div>
+                <p>北京大学民商法律硕士，2006年执业。擅长公司事务、PPP项目、投融资并购、新三板等领域。中国银行法学研究会理事。</p>
+            </div>
+            <div class="team-card">
+                <img src="徐春国.jpg" alt="徐春国律师" class="photo">
+                <h4>徐春国</h4>
+                <div class="title">律师</div>
+                <p>北京大学法律硕士，专注公司并购重组、投融资、房地产、法律风险防控。执业近10年，多次参与政府重大项目法律论证。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== News ===== -->
+<section class="section section-news" id="news">
+    <div class="container">
+        <div class="section-header">
+            <h2>律所资讯</h2>
+            <div class="en-sub">NEWS & INSIGHTS</div>
+            <div class="divider"></div>
+        </div>
+        <div class="news-grid">
+            <div class="news-column">
+                <h5>中晓动态</h5>
+                <div class="news-item">
+                    <a href="#">
+                        <div class="date">2026-07</div>
+                        <h6>华展资产签约阿里资产，成为北京唯一线下服务商</h6>
+                        <div class="summary">华展资产正式签约阿里资产平台，借助阿里拍卖平台全面开展法拍业务，为客户提供专业司法拍卖服务...</div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="#">
+                        <div class="date">2024-2025</div>
+                        <h6>不良资产管理规模突破90亿</h6>
+                        <div class="summary">近两年不良资产管理规模快速增长，企业不良资产管理规模超20亿，个人信贷管理规模超70亿...</div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="#">
+                        <div class="date">2020-01</div>
+                        <h6>北京中晓律师事务所正式设立</h6>
+                        <div class="summary">华展资产发起设立北京中晓律师事务所，秉持法律与资本相结合的商业理念，深耕不良资产领域...</div>
+                    </a>
+                </div>
+            </div>
+            <div class="news-column">
+                <h5>专业视角</h5>
+                <div class="news-item">
+                    <a href="#">
+                        <div class="date">2026-07-08</div>
+                        <h6>借条和欠条只差一个字，法院可能不认</h6>
+                        <div class="summary">借条和欠条虽然只有一字之差，但在法律上存在本质区别。本文详解两种凭证的法律效力差异...</div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="#">
+                        <div class="date">2026-07-05</div>
+                        <h6>不良资产是垃圾？真正的玩家正在闷声发财</h6>
+                        <div class="summary">不良资产处置市场正在成为资本追逐的新蓝海，本文将拆解不良资产投资的核心逻辑与法律要点...</div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="#">
+                        <div class="date">2026-03-05</div>
+                        <h6>小股东如何从困局中拿回3000万？</h6>
+                        <div class="summary">股东僵局破解实录：小股东举证艰难、退出无路——这不是假设，而是真实的法律服务案例...</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Affiliated Companies ===== -->
+<section class="section section-practice" id="affiliates">
+    <div class="container">
+        <div class="section-header">
+            <h2>关联机构</h2>
+            <div class="en-sub">AFFILIATED ENTITIES</div>
+            <div class="divider"></div>
+        </div>
+        <div class="practice-grid">
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 6h2v2H9zm4 0h2v2h-2zM9 10h2v2H9zm4 0h2v2h-2zM9 14h2v2H9zm4 0h2v2h-2z"/></svg></div>
+                <h4>华展资产</h4>
+                <p>成立于2014年，深耕不动产不良业务，致力于解决金融机构的不良资产盘活、为企业提供并购重组等服务。围绕不动产不良资产收购规模达20亿/年。2024年签约阿里资产，成为北京唯一线下服务商。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M4 21V9l8-5 8 5v12"/><path d="M8 14h2v4H8zm3 0h2v4h-2zm3 0h2v4h-2z"/><path d="M3 21h18"/></svg></div>
+                <h4>国发集团</h4>
+                <p>京津冀地区最大企业助贷平台，国家工商总局颁发金融业务外包资质。累计合作客户2万+，年度协助客户批款额超30亿。旗下拥有融卫士、账卫士、法卫士等品牌。</p>
+            </div>
+            <div class="practice-card">
+                <div class="icon"><svg class="icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+                <h4>中科智嘉</h4>
+                <p>成立于2007年，专业司法辅助拍卖公司。入驻北京市朝阳法院、通州法院、第一中级法院、第三中级法院、金融法院等多家法院，提供互联网+法律顾问司法辅助服务。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>联系我们</h2>
+            <div class="en-sub">CONTACT US</div>
+            <div class="divider"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h4>北京中晓律师事务所</h4>
+                <div class="contact-item">
+                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div>
+                        <div class="ci-label">地址</div>
+                        <div class="ci-value">北京市朝阳区光华路甲14号诺安基金大厦11层</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+                    <div>
+                        <div class="ci-label">电话</div>
+                        <div class="ci-value">13522711878</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                    <div>
+                        <div class="ci-label">邮箱</div>
+                        <div class="ci-value">534818861@qq.com</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+                    <div>
+                        <div class="ci-label">工作时间</div>
+                        <div class="ci-value">周一至周五 9:00 - 18:00</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" width="20" height="20"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+                    <div>
+                        <div class="ci-label">微信公众号</div>
+                        <div class="ci-value">中晓律师事务所</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h4>在线咨询</h4>
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="电话" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="邮箱（选填）">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="请简要描述您的法律问题..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">提交咨询 →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Map (OpenStreetMap Embed) ===== -->
+<div class="map-section">
+    <iframe 
+        src="https://www.openstreetmap.org/export/embed.html?bbox=116.451%2C39.913%2C116.468%2C39.923&layer=mapnik&marker=39.9185%2C116.4593"
+        style="width:100%;height:100%;border:0;"
+        title="中晓律师事务所位置"
+        loading="lazy">
+    </iframe>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>北京中晓律师事务所</h4>
+                <p>ZHONGXIAO LAW FIRM</p>
+                <p style="margin-top:12px;line-height:1.8;">
+                    以法律之盾，守护您的权益。<br>
+                    中晓律师，您身边的法律专家。
+                </p>
+                <div class="qr">
+                    <div style="width:100px;height:100px;background:rgba(255,255,255,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:11px;">
+                        公众号二维码
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>快速链接</h4>
+                <p><a href="#about">关于中晓</a></p>
+                <p><a href="#practice">业务领域</a></p>
+                <p><a href="#team">律师团队</a></p>
+                <p><a href="#news">律所资讯</a></p>
+            </div>
+            <div>
+                <h4>业务领域</h4>
+                <p><a href="#practice">民商事诉讼</a></p>
+                <p><a href="#practice">公司法律顾问</a></p>
+                <p><a href="#practice">不良资产处置</a></p>
+                <p><a href="#practice">知识产权</a></p>
+            </div>
+            <div>
+                <h4>联系方式</h4>
+                <p><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> 13522711878</p>
+                <p><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> 534818861@qq.com</p>
+                <p><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 北京市朝阳区光华路甲14号诺安基金大厦11层</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 北京中晓律师事务所 All Rights Reserved</span>
+            <span><a href="#">京ICP备XXXXXXXX号</a> | <a href="#">隐私政策</a></span>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== Scroll to Top ===== -->
+<button class="scroll-top" id="scrollTop" aria-label="回到顶部">↑</button>
+
+<script>
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+});
+
+// Close menu on nav click (mobile)
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('open');
+    });
+});
+
+// Header scroll style
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Scroll to top button
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], .hero');
+const navLinks = document.querySelectorAll('.nav a');
+window.addEventListener('scroll', () => {
+    let current = 'hero';
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        const bottom = top + section.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < bottom) {
+            current = section.id || 'hero';
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Contact form — just prevent default for now
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('感谢您的咨询！我们会尽快与您联系。\n（此页面为展示版，表单提交功能待配置）');
+});
+</script>
+</body>
+</html>
