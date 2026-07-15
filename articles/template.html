@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__TITLE__ — 北京中晓律师事务所</title>
+    <meta name="description" content="__DESC__">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://zhongxiao-law-website.pages.dev/articles/__FILE__">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; color: #333; background: #fff; line-height: 1.6; }
+        a { text-decoration: none; color: #c0392b; }
+        a:hover { color: #a93226; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; height: 76px; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 46px; width: auto; border-radius: 4px; }
+        .logo-text { font-size: 20px; font-weight: 700; color: #1a1a1a; letter-spacing: 2px; }
+        .logo-sub { font-size: 11px; color: #999; letter-spacing: 1px; margin-top: 2px; }
+        .nav { display: flex; gap: 4px; }
+        .nav a { padding: 8px 18px; font-size: 15px; color: #444; border-radius: 6px; transition: all 0.2s; position: relative; }
+        .nav a:hover { color: #9c231b; background: rgba(156,35,27,0.06); }
+        .article-container { max-width: 800px; margin: 100px auto 60px; padding: 0 24px; }
+        .article-header { margin-bottom: 40px; }
+        .article-category { display: inline-block; font-size: 13px; color: #c0392b; font-weight: 600; margin-bottom: 12px; letter-spacing: 2px; }
+        .article-title { font-size: 32px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 16px; }
+        .article-meta { font-size: 14px; color: #999; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+        .article-content { font-size: 16px; line-height: 2; color: #444; }
+        .article-content h2 { font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 40px 0 16px; padding-left: 14px; border-left: 4px solid #c0392b; }
+        .article-content h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin: 28px 0 12px; }
+        .article-content p { margin-bottom: 16px; text-indent: 2em; }
+        .article-content blockquote { margin: 20px 0; padding: 16px 20px; background: #f8f9fb; border-left: 4px solid #c0392b; border-radius: 4px; color: #666; font-size: 15px; }
+        .article-content blockquote p { text-indent: 0; margin-bottom: 0; }
+        .article-content ul, .article-content ol { margin: 16px 0 16px 2em; }
+        .article-content li { margin-bottom: 8px; }
+        .article-content strong { color: #1a1a1a; }
+        .article-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #eee; }
+        .article-footer .back-link { display: inline-flex; align-items: center; gap: 6px; color: #c0392b; font-weight: 600; font-size: 15px; }
+        .article-footer .back-link:hover { color: #a93226; }
+        .disclaimer { margin-top: 24px; padding: 16px 20px; background: #fff8f0; border-radius: 8px; font-size: 13px; color: #888; line-height: 1.6; }
+        .disclaimer strong { color: #666; }
+        .footer { background: #1a1a2e; color: #fff; padding: 40px 0 24px; margin-top: 60px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.4); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 24px; }
+            .article-content { font-size: 15px; }
+            .article-container { margin-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <img src="../logo.png" alt="中晓律师事务所" class="logo-img">
+                <div>
+                    <div class="logo-text">中晓律师事务所</div>
+                    <div class="logo-sub">ZHONGXIAO LAW FIRM</div>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="../index.html">首页</a>
+                <a href="../index.html#news">律所资讯</a>
+                <a href="../index.html#contact">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="article-container">
+        __CONTENT__
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>© 2026 北京中晓律师事务所 All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
