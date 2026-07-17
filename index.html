@@ -152,47 +152,52 @@
             color: #fff; max-width: 700px;
         }
         .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 6px 16px; border-radius: 20px;
-            font-size: 13px; color: rgba(255,255,255,0.8);
-            margin-bottom: 24px;
-            letter-spacing: 2px;
+            font-size: 13px; color: rgba(255,255,255,0.5);
+            letter-spacing: 3px; margin-bottom: 32px;
+            font-weight: 300;
         }
         .hero h1 {
-            font-size: 48px; font-weight: 700;
-            line-height: 1.25; margin-bottom: 20px;
-            letter-spacing: 3px;
+            font-size: 52px; font-weight: 300;
+            line-height: 1.3; margin-bottom: 8px;
+            letter-spacing: 6px;
         }
-        .hero h1 span { color: #e74c3c; }
+        .hero h1 .em {
+            font-weight: 700; color: #e74c3c;
+            letter-spacing: 2px;
+        }
+        .hero-accent {
+            width: 40px; height: 2px;
+            background: #c0392b;
+            margin: 28px 0;
+        }
         .hero p {
-            font-size: 17px; color: rgba(255,255,255,0.75);
-            line-height: 1.8; margin-bottom: 36px;
-            max-width: 560px;
+            font-size: 15px; color: rgba(255,255,255,0.55);
+            line-height: 1.9; margin-bottom: 44px;
+            max-width: 480px;
+            font-weight: 300;
         }
-        .hero-buttons { display: flex; gap: 16px; }
+        .hero-buttons { display: flex; gap: 20px; }
         .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 14px 32px; border-radius: 8px;
-            font-size: 15px; font-weight: 600;
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 40px; border-radius: 4px;
+            font-size: 14px; font-weight: 500;
+            letter-spacing: 2px;
             transition: all 0.3s; cursor: pointer;
-            border: none;
+            border: none; min-width: 160px;
         }
         .btn-primary {
             background: #c0392b; color: #fff;
         }
         .btn-primary:hover {
-            background: #a93226; transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(192,57,43,0.3);
+            background: #a93226;
         }
         .btn-outline {
             background: transparent; color: #fff;
-            border: 1.5px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.25);
         }
         .btn-outline:hover {
-            border-color: #c0392b; background: rgba(192,57,43,0.1);
-            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.05);
         }
 
         /* ===== Section Common ===== */
@@ -521,7 +526,7 @@
             .practice-grid { grid-template-columns: 1fr 1fr; }
             .team-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 36px; }
+            .hero h1 { font-size: 36px; letter-spacing: 4px; }
             .hero { height: 500px; }
         }
 
@@ -547,8 +552,8 @@
             .practice-grid { grid-template-columns: 1fr; }
             .team-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 28px; letter-spacing: 1px; }
-            .hero p { font-size: 15px; }
+            .hero h1 { font-size: 28px; letter-spacing: 3px; }
+            .hero p { font-size: 14px; }
             .hero-buttons { flex-direction: column; gap: 12px; }
             .btn { width: 100%; justify-content: center; }
             .section { padding: 60px 0; }
@@ -586,12 +591,13 @@
 <!-- ===== Hero ===== -->
 <section class="hero" id="hero">
     <div class="container hero-content">
-        <div class="hero-badge"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="margin-right:4px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 北京 · 专业法律服务机构</div>
-        <h1>以法律之盾<br>守护您的<span>权益</span></h1>
-        <p>北京中晓律师事务所汇聚各领域资深律师，致力于为客户提供全方位、高品质的法律服务。专业、诚信、高效——是我们不变的承诺。</p>
+        <div class="hero-badge">北京 · 中晓律师事务所</div>
+        <h1>以法律之盾<br>守护您的<span class="em">权益</span></h1>
+        <div class="hero-accent"></div>
+        <p>专注于不良资产并购重组与金融法律服务<br>专业 · 诚信 · 高效</p>
         <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="margin-right:4px"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> 免费咨询</a>
-            <a href="#about" class="btn btn-outline">了解我们 →</a>
+            <a href="#contact" class="btn btn-primary">免费咨询</a>
+            <a href="#about" class="btn btn-outline">了解我们</a>
         </div>
     </div>
 </section>
