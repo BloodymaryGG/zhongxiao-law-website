@@ -919,22 +919,22 @@
             </div>
             <div class="contact-form">
                 <h4>在线咨询</h4>
-                <form id="contactForm" action="#" method="POST">
+                <form id="contactForm" action="/submit" method="POST">
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" placeholder="姓名" required>
+                            <input type="text" name="name" placeholder="姓名" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="电话" required>
+                            <input type="tel" name="phone" placeholder="电话" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="邮箱（选填）">
+                        <input type="email" name="email" placeholder="邮箱（选填）">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="请简要描述您的法律问题..." required></textarea>
+                        <textarea name="message" placeholder="请简要描述您的法律问题..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">提交咨询 →</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">提交咨询 →</button>
                 </form>
             </div>
         </div>
@@ -1057,10 +1057,34 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact form — just prevent default for now
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Contact form — submit via AJAX
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+
+contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    alert('感谢您的咨询！我们会尽快与您联系。\n（此页面为展示版，表单提交功能待配置）');
+
+    const btnText = submitBtn.textContent;
+    submitBtn.textContent = '提交中...';
+    submitBtn.disabled = true;
+
+    try {
+        const res = await fetch('/submit', {
+            method: 'POST',
+            body: new FormData(contactForm),
+        });
+        const data = await res.json();
+        if (data.success) {
+            contactForm.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:48px;margin-bottom:16px;">✅</div><h4 style="margin-bottom:8px;">感谢您的咨询</h4><p style="color:#666;">我们会尽快与您联系。</p></div>';
+        } else {
+            alert(data.error || '提交失败，请稍后重试或直接拨打电话 13522711878');
+        }
+    } catch (err) {
+        alert('网络异常，请稍后重试或直接拨打电话 13522711878');
+    } finally {
+        submitBtn.textContent = btnText;
+        submitBtn.disabled = false;
+    }
 });
 </script>
 </body>
