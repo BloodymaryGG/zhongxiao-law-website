@@ -1039,23 +1039,11 @@ scrollTopBtn.addEventListener('click', () => {
 });
 
 // Active nav link on scroll
-const sections = document.querySelectorAll('section[id], .hero');
-const navLinks = document.querySelectorAll('.nav a');
-window.addEventListener('scroll', () => {
-    let current = 'hero';
-    sections.forEach(section => {
-        const top = section.offsetTop - 120;
-        const bottom = top + section.offsetHeight;
-        if (window.scrollY >= top && window.scrollY < bottom) {
-            current = section.id || 'hero';
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
+// Single-page home: 首页 always active (nav now points to page URLs)
+document.querySelectorAll('.nav a').forEach(function(link) {
+    if (link.getAttribute('href') === '/') {
+        link.classList.add('active');
+    }
 });
 
 // Contact form — submit via AJAX
