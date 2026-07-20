@@ -18,7 +18,7 @@
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
     <style>
-<style>
+
         /* ===== Reset & Base ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -556,53 +556,54 @@
             .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
             .form-row { grid-template-columns: 1fr; }
         }
-    </style>
-    /* ===== Page Sub Header ===== */
-    .page-header {
-        margin-top: 76px;
-        padding: 100px 0 60px;
-        background: linear-gradient(135deg, #1a1a2e, #16213e);
-        color: #fff;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-    .page-header::before {
-        content: '';
-        position: absolute; top: -50%; left: -50%;
-        width: 200%; height: 200%;
-        background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
-    }
-    .page-header h2 {
-        font-size: 36px; font-weight: 300; letter-spacing: 6px;
-        margin-bottom: 12px; position: relative; z-index: 1;
-    }
-    .page-header .en-sub {
-        font-size: 13px; color: rgba(255,255,255,0.35);
-        letter-spacing: 4px; position: relative; z-index: 1;
-    }
-    .page-header .divider {
-        width: 40px; height: 2px;
-        background: #9c231b; margin: 20px auto 0;
-        position: relative; z-index: 1;
-    }
-    .page-body {
-        padding: 60px 0; background: #fff;
-        min-height: 400px;
-    }
-    .page-body .container {
-        max-width: 1100px; margin: 0 auto;
-        padding: 0 24px;
-    }
-    .page-body p {
-        font-size: 15px; line-height: 1.9; color: #444;
-        margin-bottom: 16px;
-    }
-    @media (max-width: 768px) {
-        .page-header { padding: 80px 0 40px; }
-        .page-header h2 { font-size: 26px; }
-        .page-body { padding: 40px 0; }
-    }
+    
+
+/* ===== Page Sub Header ===== */
+.page-header {
+    margin-top: 76px;
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.page-header::before {
+    content: '';
+    position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+.page-header h2 {
+    font-size: 36px; font-weight: 300; letter-spacing: 6px;
+    margin-bottom: 12px; position: relative; z-index: 1;
+}
+.page-header .en-sub {
+    font-size: 13px; color: rgba(255,255,255,0.35);
+    letter-spacing: 4px; position: relative; z-index: 1;
+}
+.page-header .divider {
+    width: 40px; height: 2px;
+    background: #9c231b; margin: 20px auto 0;
+    position: relative; z-index: 1;
+}
+.page-body {
+    padding: 60px 0; background: #fff;
+    min-height: 400px;
+}
+.page-body .container {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 24px;
+}
+.page-body p {
+    font-size: 15px; line-height: 1.9; color: #444;
+    margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+    .page-header { padding: 80px 0 40px; }
+    .page-header h2 { font-size: 26px; }
+    .page-body { padding: 40px 0; }
+}
 
     </style>
 </head>
@@ -629,7 +630,6 @@
         </nav>
     </div>
 </header>
-
     <section class="page-header">
     <h2>联系我们</h2>
     <div class="en-sub">CONTACT US</div>
@@ -674,7 +674,7 @@
                     <div style="margin-bottom:16px;">
                         <textarea name="message" placeholder="请简要描述您的法律问题..." required style="width:100%;padding:12px 16px;border:1px solid #e0e0e0;border-radius:6px;font-size:14px;height:120px;resize:vertical;box-sizing:border-box;font-family:inherit;"></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" id="submitBtn" style="width:100%;">提交咨询 →</button>
+                    <button type="submit" id="submitBtn" style="width:100%;padding:14px 28px;background:#9c231b;color:#fff;border:none;border-radius:6px;font-size:15px;cursor:pointer;transition:background 0.3s;">提交咨询 →</button>
                 </form>
             </div>
         </div>
@@ -686,7 +686,6 @@
         </div>
     </div>
 </section>
-
     <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -705,17 +704,17 @@
             </div>
             <div>
                 <h4>快速链接</h4>
-                <p><a href="#about">关于中晓</a></p>
-                <p><a href="#practice">业务领域</a></p>
-                <p><a href="#team">律师团队</a></p>
-                <p><a href="#news">律所资讯</a></p>
+                <p><a href="/about.html">关于中晓</a></p>
+                <p><a href="/practice.html">业务领域</a></p>
+                <p><a href="/team.html">律师团队</a></p>
+                <p><a href="/articles.html">律所资讯</a></p>
             </div>
             <div>
                 <h4>业务领域</h4>
-                <p><a href="#practice">民商事诉讼</a></p>
-                <p><a href="#practice">公司法律顾问</a></p>
-                <p><a href="#practice">不良资产处置</a></p>
-                <p><a href="#practice">知识产权</a></p>
+                <p><a href="/practice.html">民商事诉讼</a></p>
+                <p><a href="/practice.html">公司法律顾问</a></p>
+                <p><a href="/practice.html">不良资产处置</a></p>
+                <p><a href="/practice.html">知识产权</a></p>
             </div>
             <div>
                 <h4>联系方式</h4>
@@ -731,60 +730,69 @@
     </div>
 </footer>
     <button class="scroll-top" id="scrollTop" aria-label="回到顶部">↑</button>
-
     <script>
 // Scroll to top
-const scrollBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('visible', window.scrollY > 400);
-});
-scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+(function() {
+var scrollBtn = document.getElementById('scrollTop');
+if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+})();
 
 // Mobile menu toggle
-document.getElementById('menuToggle')?.addEventListener('click', function() {
-    document.getElementById('nav').classList.toggle('open');
-    this.classList.toggle('open');
+(function() {
+var menuToggle = document.getElementById('menuToggle');
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        document.getElementById('nav').classList.toggle('open');
+    });
+}
+})();
+
+// Highlight current page
+document.querySelectorAll('.nav a').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href === window.location.pathname) {
+        link.classList.add('active');
+    }
+    link.addEventListener('click', function() {
+        var nav = document.getElementById('nav');
+        if (nav) nav.classList.remove('open');
+    });
 });
-
-
-    // Highlight current page in nav
-    document.querySelectorAll('.nav a').forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href === window.location.pathname || 
-            (window.location.pathname === '/' && href === '/') ||
-            (window.location.pathname.endsWith(href.replace('.html', '')))) {
-            link.classList.add('active');
-        }
-    });
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav a').forEach(function(link) {
-        link.addEventListener('click', function() {
-            document.getElementById('nav').classList.remove('open');
-        });
-    });
 
 
 // Contact form
+(function() {
 var contactForm = document.getElementById('contactForm');
 var submitBtn = document.getElementById('submitBtn');
-if (contactForm) {
+if (contactForm && submitBtn) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        var btnText = submitBtn.textContent;
+        var originalText = submitBtn.textContent;
         submitBtn.textContent = '提交中...';
         submitBtn.disabled = true;
         try {
             var res = await fetch('/submit', { method: 'POST', body: new FormData(contactForm) });
             var data = await res.json();
             if (data.success) {
-                contactForm.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:48px;margin-bottom:16px;">\u2705</div><h4 style="margin-bottom:8px;color:#1a1a2e;">\u611f\u8c22\u60a8\u7684\u54a8\u8be2</h4><p style="color:#666;">\u6211\u4eec\u4f1a\u5c3d\u5feb\u4e0e\u60a8\u8054\u7cfb\u3002</p></div>';
-            } else { alert(data.error || '\u63d0\u4ea4\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5\u6216\u76f4\u63a5\u62e8\u6253\u7535\u8bdd 13522711878'); }
-        } catch (err) { alert('\u7f51\u7edc\u5f02\u5e38\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5\u6216\u76f4\u63a5\u62e8\u6253\u7535\u8bdd 13522711878'); }
-        finally { submitBtn.textContent = btnText; submitBtn.disabled = false; }
+                contactForm.innerHTML = '<div style="text-align:center;padding:40px 0;"><div style="font-size:48px;margin-bottom:16px;">✅</div><h4 style="margin-bottom:8px;color:#1a1a2e;">感谢您的咨询</h4><p style="color:#666;">我们会尽快与您联系。</p></div>';
+            } else {
+                alert(data.error || '提交失败，请稍后重试或直接拨打电话 13522711878');
+            }
+        } catch (err) {
+            alert('网络异常，请稍后重试或直接拨打电话 13522711878');
+        }
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
     });
 }
+})();
 
     </script>
 </body>

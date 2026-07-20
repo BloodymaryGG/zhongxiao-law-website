@@ -18,7 +18,7 @@
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
     <style>
-<style>
+
         /* ===== Reset & Base ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -556,53 +556,54 @@
             .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
             .form-row { grid-template-columns: 1fr; }
         }
-    </style>
-    /* ===== Page Sub Header ===== */
-    .page-header {
-        margin-top: 76px;
-        padding: 100px 0 60px;
-        background: linear-gradient(135deg, #1a1a2e, #16213e);
-        color: #fff;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-    .page-header::before {
-        content: '';
-        position: absolute; top: -50%; left: -50%;
-        width: 200%; height: 200%;
-        background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
-    }
-    .page-header h2 {
-        font-size: 36px; font-weight: 300; letter-spacing: 6px;
-        margin-bottom: 12px; position: relative; z-index: 1;
-    }
-    .page-header .en-sub {
-        font-size: 13px; color: rgba(255,255,255,0.35);
-        letter-spacing: 4px; position: relative; z-index: 1;
-    }
-    .page-header .divider {
-        width: 40px; height: 2px;
-        background: #9c231b; margin: 20px auto 0;
-        position: relative; z-index: 1;
-    }
-    .page-body {
-        padding: 60px 0; background: #fff;
-        min-height: 400px;
-    }
-    .page-body .container {
-        max-width: 1100px; margin: 0 auto;
-        padding: 0 24px;
-    }
-    .page-body p {
-        font-size: 15px; line-height: 1.9; color: #444;
-        margin-bottom: 16px;
-    }
-    @media (max-width: 768px) {
-        .page-header { padding: 80px 0 40px; }
-        .page-header h2 { font-size: 26px; }
-        .page-body { padding: 40px 0; }
-    }
+    
+
+/* ===== Page Sub Header ===== */
+.page-header {
+    margin-top: 76px;
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.page-header::before {
+    content: '';
+    position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+.page-header h2 {
+    font-size: 36px; font-weight: 300; letter-spacing: 6px;
+    margin-bottom: 12px; position: relative; z-index: 1;
+}
+.page-header .en-sub {
+    font-size: 13px; color: rgba(255,255,255,0.35);
+    letter-spacing: 4px; position: relative; z-index: 1;
+}
+.page-header .divider {
+    width: 40px; height: 2px;
+    background: #9c231b; margin: 20px auto 0;
+    position: relative; z-index: 1;
+}
+.page-body {
+    padding: 60px 0; background: #fff;
+    min-height: 400px;
+}
+.page-body .container {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 24px;
+}
+.page-body p {
+    font-size: 15px; line-height: 1.9; color: #444;
+    margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+    .page-header { padding: 80px 0 40px; }
+    .page-header h2 { font-size: 26px; }
+    .page-body { padding: 40px 0; }
+}
 
     </style>
 </head>
@@ -629,7 +630,6 @@
         </nav>
     </div>
 </header>
-
     <section class="page-header">
     <h2>律所资讯</h2>
     <div class="en-sub">NEWS & INSIGHTS</div>
@@ -673,7 +673,6 @@
         </div>
     </div>
 </section>
-
     <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -692,17 +691,17 @@
             </div>
             <div>
                 <h4>快速链接</h4>
-                <p><a href="#about">关于中晓</a></p>
-                <p><a href="#practice">业务领域</a></p>
-                <p><a href="#team">律师团队</a></p>
-                <p><a href="#news">律所资讯</a></p>
+                <p><a href="/about.html">关于中晓</a></p>
+                <p><a href="/practice.html">业务领域</a></p>
+                <p><a href="/team.html">律师团队</a></p>
+                <p><a href="/articles.html">律所资讯</a></p>
             </div>
             <div>
                 <h4>业务领域</h4>
-                <p><a href="#practice">民商事诉讼</a></p>
-                <p><a href="#practice">公司法律顾问</a></p>
-                <p><a href="#practice">不良资产处置</a></p>
-                <p><a href="#practice">知识产权</a></p>
+                <p><a href="/practice.html">民商事诉讼</a></p>
+                <p><a href="/practice.html">公司法律顾问</a></p>
+                <p><a href="/practice.html">不良资产处置</a></p>
+                <p><a href="/practice.html">知识产权</a></p>
             </div>
             <div>
                 <h4>联系方式</h4>
@@ -718,39 +717,41 @@
     </div>
 </footer>
     <button class="scroll-top" id="scrollTop" aria-label="回到顶部">↑</button>
-
     <script>
 // Scroll to top
-const scrollBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('visible', window.scrollY > 400);
-});
-scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+(function() {
+var scrollBtn = document.getElementById('scrollTop');
+if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+})();
 
 // Mobile menu toggle
-document.getElementById('menuToggle')?.addEventListener('click', function() {
-    document.getElementById('nav').classList.toggle('open');
-    this.classList.toggle('open');
+(function() {
+var menuToggle = document.getElementById('menuToggle');
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        document.getElementById('nav').classList.toggle('open');
+    });
+}
+})();
+
+// Highlight current page
+document.querySelectorAll('.nav a').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href === window.location.pathname) {
+        link.classList.add('active');
+    }
+    link.addEventListener('click', function() {
+        var nav = document.getElementById('nav');
+        if (nav) nav.classList.remove('open');
+    });
 });
-
-
-    // Highlight current page in nav
-    document.querySelectorAll('.nav a').forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href === window.location.pathname || 
-            (window.location.pathname === '/' && href === '/') ||
-            (window.location.pathname.endsWith(href.replace('.html', '')))) {
-            link.classList.add('active');
-        }
-    });
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav a').forEach(function(link) {
-        link.addEventListener('click', function() {
-            document.getElementById('nav').classList.remove('open');
-        });
-    });
 
 
     </script>
