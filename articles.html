@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>律所资讯 | 北京中晓律师事务所</title>
+    <meta name="description" content="中晓律师事务所最新动态与专业法律视角">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="16x16">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+    <link rel="canonical" href="https://zhongxiao-law-website.pages.dev/articles.html">
+    <meta property="og:title" content="律所资讯 | 北京中晓律师事务所">
+    <meta property="og:description" content="中晓律师事务所最新动态与专业法律视角">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zhongxiao-law-website.pages.dev/articles.html">
+    <meta property="og:image" content="https://zhongxiao-law-website.pages.dev/logo.png">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+<style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            color: #333;
+            background: #fff;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+            height: 76px;
+            transition: box-shadow 0.3s;
+        }
+        .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 76px;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 12px;
+        }
+        .logo-img {
+            height: 46px; width: auto;
+            border-radius: 4px;
+        }
+        .logo-text {
+            font-size: 20px; font-weight: 700; color: #1a1a1a;
+            letter-spacing: 2px;
+        }
+        .logo-sub {
+            font-size: 11px; color: #999; letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* ===== Navigation ===== */
+        .nav { display: flex; gap: 4px; }
+        .nav a {
+            padding: 8px 18px;
+            font-size: 15px; color: #444;
+            border-radius: 6px;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .nav a:hover,
+        .nav a.active { color: #9c231b; background: rgba(156,35,27,0.06); }
+        .nav a::after {
+            content: ''; position: absolute; bottom: -2px; left: 50%;
+            width: 0; height: 2px;
+            background: #9c231b; border-radius: 2px;
+            transition: all 0.3s; transform: translateX(-50%);
+        }
+        .nav a:hover::after,
+        .nav a.active::after { width: 60%; }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer;
+            padding: 8px;
+        }
+        .menu-toggle span {
+            display: block; width: 24px; height: 2px;
+            background: #333; border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            margin-top: 76px;
+            height: 640px;
+            background: #1a1a2e;
+            position: relative;
+            overflow: hidden;
+            display: flex; align-items: center;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: url('hero-bg.jpg') center 70% / cover no-repeat;
+            opacity: 0.75;
+        }
+        .hero-bg::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 100%);
+        }
+        .hero::before {
+            content: ''; position: absolute;
+            top: -50%; right: -15%;
+            width: 900px; height: 900px;
+            background: radial-gradient(circle, rgba(192,57,43,0.12) 0%, transparent 70%);
+            z-index: 1;
+        }
+        .hero::after {
+            content: ''; position: absolute;
+            bottom: -40%; left: -10%;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            z-index: 1;
+        }
+        /* Decorative geometric lines */
+        .hero-line {
+            position: absolute;
+            background: rgba(255,255,255,0.04);
+        }
+        .hero-line-1 {
+            top: 15%; right: 8%;
+            width: 1px; height: 200px;
+            transform: rotate(30deg);
+        }
+        .hero-line-2 {
+            bottom: 20%; left: 6%;
+            width: 1px; height: 160px;
+            transform: rotate(-20deg);
+        }
+        .hero-line-3 {
+            top: 25%; left: 50%;
+            width: 120px; height: 1px;
+            transform: translateX(-50%);
+            opacity: 0.3;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+        .hero-badge {
+            font-size: 12px; color: rgba(255,255,255,0.4);
+            letter-spacing: 4px; margin-bottom: 36px;
+            font-weight: 300;
+        }
+        .hero h1 {
+            font-size: 56px; font-weight: 300;
+            line-height: 1.35; margin-bottom: 6px;
+            letter-spacing: 8px;
+        }
+        .hero h1 .em {
+            font-weight: 700; color: #9c231b;
+            letter-spacing: 4px;
+        }
+        .hero-accent {
+            width: 40px; height: 2px;
+            background: #9c231b;
+            margin: 32px auto;
+        }
+        .hero p {
+            font-size: 15px; color: rgba(255,255,255,0.5);
+            line-height: 1.9; margin: 0 auto 48px;
+            max-width: 440px;
+            font-weight: 300;
+        }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 40px; border-radius: 4px;
+            font-size: 14px; font-weight: 500;
+            letter-spacing: 2px;
+            transition: all 0.3s; cursor: pointer;
+            border: none; min-width: 160px;
+        }
+        .btn-primary {
+            background: #9c231b; color: #fff;
+        }
+        .btn-primary:hover {
+            background: #7d1c16;
+        }
+        .btn-outline {
+            background: transparent; color: #fff;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* ===== Section Common ===== */
+        .section { padding: 90px 0; }
+        .section-header {
+            text-align: center; margin-bottom: 60px;
+        }
+        .section-header h2 {
+            font-size: 32px; font-weight: 700; color: #1a1a1a;
+            letter-spacing: 2px; margin-bottom: 8px;
+        }
+        .section-header .en-sub {
+            font-size: 13px; color: #aaa; letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        .section-header .divider {
+            width: 60px; height: 3px;
+            background: #9c231b; border-radius: 3px;
+            margin: 16px auto 0;
+        }
+
+        /* ===== About ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .about-image {
+            border-radius: 12px; overflow: hidden;
+            height: 420px;
+            position: relative;
+        }
+        .about-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .about-text h3 {
+            font-size: 24px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: #666; line-height: 2;
+            font-size: 15px; margin-bottom: 16px;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px; margin-top: 36px;
+        }
+        .about-stat {
+            text-align: center; padding: 20px;
+            background: #f8f8f8; border-radius: 12px;
+        }
+        .about-stat .num {
+            font-size: 32px; font-weight: 700; color: #9c231b;
+            line-height: 1;
+        }
+        .about-stat .label {
+            font-size: 13px; color: #999; margin-top: 8px;
+        }
+        .btn-about {
+            margin-top: 32px;
+            display: inline-flex; align-items: center; gap: 6px;
+            color: #9c231b; font-weight: 600; font-size: 15px;
+            padding: 10px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .btn-about:hover { border-bottom-color: #9c231b; }
+
+        /* ===== Practice Areas ===== */
+        .section-practice { background: #f8f9fb; }
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .practice-card {
+            background: #fff; border-radius: 12px;
+            padding: 36px 28px;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+            cursor: default;
+        }
+        .practice-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            border-color: #9c231b;
+        }
+        .practice-card .icon {
+            width: 52px; height: 52px;
+            background: #9c231b;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; color: #fff;
+            margin-bottom: 20px;
+        }
+        .practice-card h4 {
+            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .practice-card p {
+            font-size: 14px; color: #777;
+            line-height: 1.8;
+        }
+
+        /* ===== Team ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+        .team-card {
+            text-align: center; border-radius: 12px;
+            padding: 32px 20px 24px;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+        .team-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            border-color: #ddd;
+        }
+        .team-card .photo {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            object-fit: cover;
+            border: 3px solid #f0f0f0;
+        }
+        .team-card h4 {
+            font-size: 17px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .team-card .title {
+            font-size: 13px; color: #9c231b; font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .team-card p {
+            font-size: 13px; color: #888;
+            line-height: 1.6;
+        }
+
+        /* ===== SVG Icons ===== */
+        .icon-svg {
+            width: 1em; height: 1em;
+            vertical-align: -0.125em;
+            fill: currentColor;
+            flex-shrink: 0;
+            display: inline-block;
+        }
+        .icon-lg { width: 1.5em; height: 1.5em; }
+        .icon-xl { width: 28px; height: 28px; }
+
+        /* ===== News/Articles ===== */
+        .section-news { background: #f8f9fb; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .news-column h5 {
+            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .news-column h5::before {
+            content: ''; display: inline-block;
+            width: 4px; height: 18px;
+            background: #9c231b; border-radius: 4px;
+        }
+        .news-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.2s;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item:hover { padding-left: 8px; }
+        .news-item a {
+            display: block;
+        }
+        .news-item .date {
+            font-size: 12px; color: #aaa; margin-bottom: 6px;
+        }
+        .news-item h6 {
+            font-size: 15px; font-weight: 600; color: #333;
+            line-height: 1.5; margin-bottom: 6px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-item h6:hover { color: #9c231b; }
+        .news-item .summary {
+            font-size: 13px; color: #888;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ===== Contact ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .contact-info h4 {
+            font-size: 20px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        .contact-item {
+            display: flex; gap: 16px; margin-bottom: 20px;
+        }
+        .contact-item .ci-icon {
+            width: 44px; height: 44px; min-width: 44px;
+            background: #f0f0f0; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .contact-item .ci-label {
+            font-size: 13px; color: #999; margin-bottom: 2px;
+        }
+        .contact-item .ci-value {
+            font-size: 15px; color: #333; font-weight: 500;
+        }
+        .contact-form {
+            background: #f8f9fb; padding: 36px 32px;
+            border-radius: 12px;
+        }
+        .contact-form h4 {
+            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-group input,
+        .form-group textarea {
+            width: 100%; padding: 12px 16px;
+            border: 1.5px solid #e0e0e0; border-radius: 8px;
+            font-size: 14px; font-family: inherit;
+            transition: border-color 0.2s;
+            background: #fff;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none; border-color: #9c231b;
+        }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: #9c231b; color: #fff;
+            border: none; border-radius: 8px;
+            font-size: 15px; font-weight: 600;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .btn-submit:hover { background: #7d1c16; }
+
+        /* ===== Map placeholder ===== */
+        .map-section {
+            height: 350px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: #1a1a2e; color: #fff;
+            padding: 50px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px;
+        }
+        .footer h4 {
+            font-size: 16px; font-weight: 700;
+            margin-bottom: 16px; color: #fff;
+        }
+        .footer p, .footer a {
+            font-size: 14px; color: rgba(255,255,255,0.6);
+            line-height: 2;
+        }
+        .footer a:hover { color: #9c231b; }
+        .footer .qr { margin-top: 16px; }
+        .footer .qr img {
+            width: 100px; height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.3); font-size: 11px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex; justify-content: space-between;
+            font-size: 13px; color: rgba(255,255,255,0.4);
+        }
+
+        /* ===== Scroll to top ===== */
+        .scroll-top {
+            position: fixed; bottom: 32px; right: 32px;
+            width: 44px; height: 44px;
+            background: #9c231b; color: #fff;
+            border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer;
+            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+            opacity: 0; visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { transform: translateY(-3px); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 968px) {
+            .about-grid,
+            .contact-grid,
+            .news-grid { grid-template-columns: 1fr; gap: 40px; }
+            .practice-grid { grid-template-columns: 1fr 1fr; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 40px; letter-spacing: 6px; }
+            .hero { height: 500px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav {
+                position: fixed; top: 76px; left: 0; right: 0;
+                background: #fff; flex-direction: column;
+                padding: 16px; gap: 0;
+                border-bottom: 1px solid #eee;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+                transform: translateY(-120%);
+                transition: transform 0.3s;
+                z-index: 99;
+            }
+            .nav.open { transform: translateY(0); }
+            .nav a {
+                padding: 14px 16px;
+                border-bottom: 1px solid #f0f0f0;
+                border-radius: 0;
+            }
+            .nav a:last-child { border-bottom: none; }
+            .practice-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 30px; letter-spacing: 5px; }
+            .hero p { font-size: 14px; }
+            .hero-buttons { flex-direction: column; gap: 12px; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 280px; }
+            .section { padding: 60px 0; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+    /* ===== Page Sub Header ===== */
+    .page-header {
+        margin-top: 76px;
+        padding: 100px 0 60px;
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        color: #fff;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .page-header::before {
+        content: '';
+        position: absolute; top: -50%; left: -50%;
+        width: 200%; height: 200%;
+        background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+    }
+    .page-header h2 {
+        font-size: 36px; font-weight: 300; letter-spacing: 6px;
+        margin-bottom: 12px; position: relative; z-index: 1;
+    }
+    .page-header .en-sub {
+        font-size: 13px; color: rgba(255,255,255,0.35);
+        letter-spacing: 4px; position: relative; z-index: 1;
+    }
+    .page-header .divider {
+        width: 40px; height: 2px;
+        background: #9c231b; margin: 20px auto 0;
+        position: relative; z-index: 1;
+    }
+    .page-body {
+        padding: 60px 0; background: #fff;
+        min-height: 400px;
+    }
+    .page-body .container {
+        max-width: 1100px; margin: 0 auto;
+        padding: 0 24px;
+    }
+    .page-body p {
+        font-size: 15px; line-height: 1.9; color: #444;
+        margin-bottom: 16px;
+    }
+    @media (max-width: 768px) {
+        .page-header { padding: 80px 0 40px; }
+        .page-header h2 { font-size: 26px; }
+        .page-body { padding: 40px 0; }
+    }
+
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="中晓律师事务所" class="logo-img">
+            <div>
+                <div class="logo-text">中晓律师事务所</div>
+                <div class="logo-sub">ZHONGXIAO LAW FIRM</div>
+            </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="nav">
+            <a href="/" class="active">首页</a>
+            <a href="/about.html">关于中晓</a>
+            <a href="/practice.html">业务领域</a>
+            <a href="/team.html">律师团队</a>
+            <a href="/articles.html">律所资讯</a>
+            <a href="/contact.html">联系我们</a>
+        </nav>
+    </div>
+</header>
+
+    <section class="page-header">
+    <h2>律所资讯</h2>
+    <div class="en-sub">NEWS & INSIGHTS</div>
+    <div class="divider"></div>
+</section>
+
+<section class="page-body">
+    <div class="container">
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;max-width:800px;margin:0 auto;">
+            
+            <a href="articles/insight-auction-house.html" style="display:block;padding:20px 24px;background:#f8f9fa;border-radius:8px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+                <span style="font-size:12px;color:#9c231b;font-weight:600;">专业视角</span>
+                <h4 style="font-size:16px;margin:8px 0 6px;color:#1a1a2e;">法拍房"捡漏"还是"踩坑"？不良资产处置中的十大避坑要点 — 北京中晓律师事务所</h4>
+                <p style="font-size:13px;color:#999;margin:0;">法拍房市场热度不减，但机遇与风险并存。本文梳理法拍房购买的十大法律风险及避坑策略，助您安全"捡漏"。</p>
+            </a>
+            <a href="articles/insight-guarantee.html" style="display:block;padding:20px 24px;background:#f8f9fa;border-radius:8px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+                <span style="font-size:12px;color:#9c231b;font-weight:600;">专业视角</span>
+                <h4 style="font-size:16px;margin:8px 0 6px;color:#1a1a2e;">担保不是签个字就完事——保证期间与保证方式的法律要点 — 北京中晓律师事务所</h4>
+                <p style="font-size:13px;color:#999;margin:0;">保证期间已过，保证人免责。一文讲清保证方式和保证期间的法律要点，债权人必看。</p>
+            </a>
+            <a href="articles/insight-marital-debt.html" style="display:block;padding:20px 24px;background:#f8f9fa;border-radius:8px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+                <span style="font-size:12px;color:#9c231b;font-weight:600;">专业视角</span>
+                <h4 style="font-size:16px;margin:8px 0 6px;color:#1a1a2e;">夫妻共同债务如何认定？——最高院最新司法裁判规则实务解析 — 北京中晓律师事务所</h4>
+                <p style="font-size:13px;color:#999;margin:0;">本文结合最高院最新裁判观点，系统梳理夫妻共同债务的认定规则，帮助债权人合法维权、债务人合理避坑。</p>
+            </a>
+            <a href="articles/news-2026-midyear.html" style="display:block;padding:20px 24px;background:#f8f9fa;border-radius:8px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+                <span style="font-size:12px;color:#1a1a2e;font-weight:600;">中晓动态</span>
+                <h4 style="font-size:16px;margin:8px 0 6px;color:#1a1a2e;">中晓律所2026年中总结会：不良资产处置规模再创新高 — 北京中晓律师事务所</h4>
+                <p style="font-size:13px;color:#999;margin:0;">2026年7月12日，北京中晓律师事务所召开2026年度年中工作总结会，上半年累计处置债权本金超12亿元，同比增长30%。</p>
+            </a>
+            <a href="articles/news-loan-case.html" style="display:block;padding:20px 24px;background:#f8f9fa;border-radius:8px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+                <span style="font-size:12px;color:#1a1a2e;font-weight:600;">中晓动态</span>
+                <h4 style="font-size:16px;margin:8px 0 6px;color:#1a1a2e;">中晓律师团队成功代理某金融借款合同纠纷案，标的额逾2.3亿元 — 北京中晓律师事务所</h4>
+                <p style="font-size:13px;color:#999;margin:0;">中晓律师团队近日成功代理一起标的额逾2.3亿元的金融借款合同纠纷案，实现债权本息全额回收。</p>
+            </a>
+            <a href="articles/news-seminar-npl.html" style="display:block;padding:20px 24px;background:#f8f9fa;border-radius:8px;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+                <span style="font-size:12px;color:#1a1a2e;font-weight:600;">中晓动态</span>
+                <h4 style="font-size:16px;margin:8px 0 6px;color:#1a1a2e;">华展资产&中晓律所联合举办"金融机构不良资产处置实务"专题研讨会 — 北京中晓律师事务所</h4>
+                <p style="font-size:13px;color:#999;margin:0;">2026年7月8日，华展资产与中晓律师事务所联合举办不良资产处置实务研讨会，三十余家金融机构代表参会。</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>北京中晓律师事务所</h4>
+                <p>ZHONGXIAO LAW FIRM</p>
+                <p style="margin-top:12px;line-height:1.8;">
+                    以法律之盾，守护您的权益。<br>
+                    中晓律师，您身边的法律专家。
+                </p>
+                <div class="qr">
+                    <div style="width:100px;height:100px;background:rgba(255,255,255,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:11px;">
+                        公众号二维码
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>快速链接</h4>
+                <p><a href="#about">关于中晓</a></p>
+                <p><a href="#practice">业务领域</a></p>
+                <p><a href="#team">律师团队</a></p>
+                <p><a href="#news">律所资讯</a></p>
+            </div>
+            <div>
+                <h4>业务领域</h4>
+                <p><a href="#practice">民商事诉讼</a></p>
+                <p><a href="#practice">公司法律顾问</a></p>
+                <p><a href="#practice">不良资产处置</a></p>
+                <p><a href="#practice">知识产权</a></p>
+            </div>
+            <div>
+                <h4>联系方式</h4>
+                <p><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> 13522711878</p>
+                <p><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> 534818861@qq.com</p>
+                <p><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 北京市朝阳区光华路甲14号诺安基金大厦11层</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 北京中晓律师事务所 All Rights Reserved</span>
+            <span><a href="#">京ICP备XXXXXXXX号</a> | <a href="#">隐私政策</a></span>
+        </div>
+    </div>
+</footer>
+    <button class="scroll-top" id="scrollTop" aria-label="回到顶部">↑</button>
+
+    <script>
+// Scroll to top
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Mobile menu toggle
+document.getElementById('menuToggle')?.addEventListener('click', function() {
+    document.getElementById('nav').classList.toggle('open');
+    this.classList.toggle('open');
+});
+
+
+    // Highlight current page in nav
+    document.querySelectorAll('.nav a').forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href === window.location.pathname || 
+            (window.location.pathname === '/' && href === '/') ||
+            (window.location.pathname.endsWith(href.replace('.html', '')))) {
+            link.classList.add('active');
+        }
+    });
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('nav').classList.remove('open');
+        });
+    });
+
+
+    </script>
+</body>
+</html>
