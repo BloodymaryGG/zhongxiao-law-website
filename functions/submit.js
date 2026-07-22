@@ -9,7 +9,7 @@
  * 2. 创建 API Key
  * 3. 在 Cloudflare Pages 的项目的「环境变量」中添加：
  *    - RESEND_API_KEY = re_xxxxx
- *    - TO_EMAIL = 534818861@qq.com
+ *    - TO_EMAIL = myq@zhongxiaolaw.com
  *    - FROM_EMAIL = 咨询表单 <consult@你的域名.com>
  *
  * 注：如果不配置环境变量，表单会正常返回成功但不会发邮件（不会报错让客户看到）
