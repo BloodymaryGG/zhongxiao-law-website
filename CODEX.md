@@ -29,6 +29,19 @@
 3. Cloudflare Pages 自动构建部署（静态文件 + Functions 直接发布）
 4. 打开线上地址确认效果（首页、文章页、表单分别验证）
 
+## 内容与风格约定（改之前必看）
+
+- **联系方式已全面更新**：全站邮箱统一为 `myq@zhongxiaolaw.com`（11 处），电话 `13522711878`（14 处）；旧邮箱 `534818861@qq.com` 已无残留。新增内容保持一致，**不要用旧邮箱**。表单收件人 `TO_EMAIL` 也是 `myq@zhongxiaolaw.com`
+- **文章与封面**：`articles/` 下有 6 篇文章 + 1 个模板（`template.html`）+ 33 张封面图。新增文章需配套封面图，命名沿用 `cover-*.png` 风格
+- **`qrcode.jpg` 是公众号二维码**，6 个页面全部引用，不要误删或改路径
+- **生产环境变量在 Cloudflare 控制台**（不在代码里）。`FROM_EMAIL` 目前可能仍是 Resend 的占位符 `onboarding@resend.dev`，属正常，**不要当成 bug 去修**；`TO_EMAIL` 已是 `myq@zhongxiaolaw.com`
+- **风格约束**：最近一次大改版是"华城风格"卡片布局，改样式前先看现有页面，保持视觉统一，别自由发挥
+
+## 备注
+
+- 域名 `zxlawfirm.cn` 已购买并解析到 Cloudflare（线上已验证可访问）；早期备注里"域名还没买"的说法已过时
+- ICP 备案：境外托管（Cloudflare Pages）不需要备案，属合规状态，不用管
+
 ## 已知待办（未做）
 
 - 首页 5 张「即将上线」资讯卡（`coming-soon`）：文章写好后补页面并换回链接
