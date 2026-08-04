@@ -52,16 +52,21 @@
         .back-link { display: inline-block; margin-bottom: 28px; font-size: 14px; color: #9c231b; }
         .back-link:hover { text-decoration: underline; }
 
-        .lawyer-detail { display: grid; grid-template-columns: 380px 1fr; border: 1px solid #eee; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); background: #fff; }
-        .lawyer-photo { background: #f0f0f0; }
+        .lawyer-head { display: grid; grid-template-columns: 360px 1fr; gap: 48px; align-items: start; }
+        .lawyer-photo { aspect-ratio: 3 / 4; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.10); }
         .lawyer-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-        .lawyer-info { padding: 48px 52px; }
-        .lawyer-info h3 { font-size: 34px; color: #1a1a2e; letter-spacing: 2px; }
-        .lawyer-t { display: inline-block; margin: 10px 0 22px; font-size: 12px; letter-spacing: 2px; color: #9c231b; border: 1px solid #d8b4b0; border-radius: 20px; padding: 3px 14px; }
-        .lawyer-info .bio-label { font-weight: 700; color: #1a1a2e; margin-top: 18px; font-size: 15px; }
-        .lawyer-info p { margin: 6px 0; font-size: 15px; color: #555; line-height: 2; }
-        .tag-row { margin: 6px 0 0; }
+        .lawyer-head-info h3 { font-size: 36px; color: #1a1a2e; letter-spacing: 2px; margin-bottom: 8px; }
+        .lawyer-t { display: inline-block; margin-bottom: 18px; font-size: 12px; letter-spacing: 2px; color: #9c231b; border: 1px solid #d8b4b0; border-radius: 20px; padding: 3px 14px; }
+        .lawyer-brief { font-size: 16px; color: #555; line-height: 2; margin-bottom: 18px; }
+        .tag-row { margin: 0 0 4px; }
         .tag { display: inline-block; margin: 3px 6px 0 0; padding: 4px 14px; background: #f0f4fa; color: #2c4a7c; border-radius: 20px; font-size: 13px; }
+        .lawyer-body { margin-top: 48px; border-top: 1px solid #eee; padding-top: 36px; max-width: 900px; }
+        .lawyer-section { margin-bottom: 36px; }
+        .lawyer-section h4 { font-size: 19px; color: #1a1a2e; padding-left: 14px; border-left: 4px solid #9c231b; margin-bottom: 16px; letter-spacing: 1px; }
+        .lawyer-section p { margin: 8px 0; font-size: 15px; color: #555; line-height: 2.1; }
+        .timeline { list-style: none; }
+        .timeline li { position: relative; padding-left: 22px; margin: 8px 0; font-size: 15px; color: #555; line-height: 1.9; }
+        .timeline li::before { content: ''; position: absolute; left: 2px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: #9c231b; }
 
         .footer { background: #1a1a2e; color: #fff; padding: 50px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
@@ -88,9 +93,9 @@
             .page-header { padding: 80px 0 40px; }
             .page-header h2 { font-size: 26px; }
             .page-body { padding: 40px 0; }
-            .lawyer-detail { grid-template-columns: 1fr; }
-            .lawyer-photo img { max-height: 420px; width: 100%; }
-            .lawyer-info { padding: 28px 20px; }
+            .lawyer-head { grid-template-columns: 1fr; gap: 24px; }
+            .lawyer-photo { max-width: 320px; }
+            .lawyer-body { margin-top: 32px; }
         }
     </style>
 </head>
@@ -126,14 +131,22 @@
     <section class="page-body">
         <div class="container">
             <a class="back-link" href="/team.html">← 返回律师团队</a>
-            <div class="lawyer-detail">
+            <div class="lawyer-head">
                 <div class="lawyer-photo"><img src="徐春国.jpg" alt="徐春国"></div>
-                <div class="lawyer-info">
+                <div class="lawyer-head-info">
                     <h3>徐春国</h3>
                     <span class="lawyer-t">律师</span>
-                    <p class="bio-label">专业领域</p>
+                    <p class="lawyer-brief">长期深耕不良资产处置与重组、公司综合业务及金融法律服务，拥有丰富的项目实操经验。</p>
                     <div class="tag-row"><span class="tag">不良资产处置与重组</span><span class="tag">公司综合业务</span><span class="tag">金融法律服务</span></div>
-                    <p class="bio-label">执业简介</p>
+                </div>
+            </div>
+            <div class="lawyer-body">
+                <div class="lawyer-section">
+                    <h4>业务领域</h4>
+                    <div class="tag-row"><span class="tag">不良资产处置与重组</span><span class="tag">公司综合业务</span><span class="tag">金融法律服务</span></div>
+                </div>
+                <div class="lawyer-section">
+                    <h4>个人介绍</h4>
                     <p>长期深耕不良资产处置与重组、公司综合业务及金融法律服务，拥有丰富的项目实操经验。</p>
                 </div>
             </div>
