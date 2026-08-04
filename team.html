@@ -311,37 +311,92 @@
         /* ===== Team ===== */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 28px;
         }
         .team-card {
-            text-align: center; border-radius: 12px;
-            padding: 32px 20px 24px;
-            transition: all 0.3s;
+            background: #fff;
             border: 1px solid #eee;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: transform .3s ease, box-shadow .3s ease;
         }
         .team-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-            border-color: #ddd;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
         }
-        .team-card .photo {
-            width: 100px; height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 16px;
+        .team-photo {
+            position: relative;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        .team-photo img {
+            width: 100%; height: 100%;
             object-fit: cover;
-            border: 3px solid #f0f0f0;
+            object-position: center top;
+            transition: transform .5s ease;
         }
-        .team-card h4 {
-            font-size: 17px; font-weight: 700; color: #1a1a1a;
-            margin-bottom: 4px;
+        .team-card:hover .team-photo img { transform: scale(1.04); }
+        .team-photo::after {
+            content: "";
+            position: absolute; left: 0; right: 0; bottom: 0;
+            height: 55%;
+            background: linear-gradient(to top, rgba(26,26,46,0.88), rgba(26,26,46,0));
+            pointer-events: none;
         }
-        .team-card .title {
-            font-size: 13px; color: #9c231b; font-weight: 500;
-            margin-bottom: 12px;
+        .team-name {
+            position: absolute; left: 20px; right: 20px; bottom: 16px;
+            color: #fff; z-index: 2;
         }
-        .team-card p {
-            font-size: 13px; color: #888;
-            line-height: 1.6;
+        .team-name h4 { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+        .team-title {
+            display: inline-block; margin-top: 6px;
+            font-size: 12px; letter-spacing: 2px;
+            color: #f0d9a8;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 20px; padding: 2px 12px;
+        }
+        .team-summary {
+            padding: 16px 20px 0;
+            font-size: 13px; color: #777; line-height: 1.7;
+        }
+        .team-toggle {
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            width: calc(100% - 40px); margin: 14px 20px 0;
+            padding: 9px 0;
+            font-size: 13px; color: #9c231b;
+            background: none; border: 1px dashed #d8b4b0;
+            border-radius: 8px; cursor: pointer;
+            transition: all .3s ease;
+        }
+        .team-toggle:hover { background: #fdf4f3; }
+        .team-arrow { display: inline-block; transition: transform .3s ease; }
+        .team-card.open .team-arrow { transform: rotate(180deg); }
+        .team-card.open .team-toggle { border-style: solid; background: #fdf4f3; }
+        .team-bio {
+            max-height: 0; overflow: hidden;
+            transition: max-height .45s ease;
+        }
+        .team-card.open .team-bio { max-height: 760px; }
+        .team-bio-inner {
+            padding: 14px 20px 22px;
+            font-size: 13px; color: #666; line-height: 1.9;
+            border-top: 1px solid #f0f0f0;
+        }
+        .team-card .team-bio-inner p { margin: 6px 0; }
+        .team-card .team-bio-inner .bio-label {
+            font-weight: 700; color: #1a1a2e; margin-top: 10px;
+        }
+        .team-card .team-bio-inner .tag-row { margin: 4px 0 0; }
+        .team-card .team-bio-inner .tag {
+            display: inline-block; margin: 3px 6px 0 0; padding: 2px 10px;
+            background: #f0f4fa; color: #2c4a7c; border-radius: 20px; font-size: 12px;
+        }
+        .page-body .team-more {
+            text-align: center; margin-top: 40px;
+            color: #999; font-size: 13px;
         }
 
         /* ===== SVG Icons ===== */
@@ -638,41 +693,91 @@
 
 <section class="page-body">
     <div class="container">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;">
-            <div style="background:#f8f9fa;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                <img src="孙国华.jpg" alt="孙国华" style="width:100%;height:300px;object-fit:cover;">
-                <div style="padding:24px;">
-                    <h4 style="font-size:18px;margin-bottom:4px;color:#1a1a2e;">孙国华</h4>
-                    <p style="font-size:13px;color:#9c231b;margin-bottom:12px;">律师</p>
-                    <p style="font-size:14px;line-height:1.7;color:#666;">专业领域：民商事诉讼与仲裁、不良资产处置等，具有丰富的实务经验和深厚的理论功底。</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="孙国华.jpg" alt="孙国华">
+                    <div class="team-name">
+                        <h4>孙国华</h4>
+                        <span class="team-title">律师</span>
+                    </div>
+                </div>
+                <div class="team-summary">专业领域：民商事诉讼与仲裁、不良资产处置等</div>
+                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
+                <div class="team-bio">
+                    <div class="team-bio-inner">
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">民商事诉讼与仲裁</span><span class="tag">不良资产处置</span></div>
+                        <p class="bio-label">执业简介</p>
+                        <p>长期专注于民商事诉讼与仲裁、不良资产处置等领域的法律服务，具有丰富的实务经验和深厚的理论功底。</p>
+                    </div>
                 </div>
             </div>
-            <div style="background:#f8f9fa;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                <img src="徐春国.jpg" alt="徐春国" style="width:100%;height:300px;object-fit:cover;">
-                <div style="padding:24px;">
-                    <h4 style="font-size:18px;margin-bottom:4px;color:#1a1a2e;">徐春国</h4>
-                    <p style="font-size:13px;color:#9c231b;margin-bottom:12px;">律师</p>
-                    <p style="font-size:14px;line-height:1.7;color:#666;">专业领域：不良资产处置与重组、公司综合业务、金融法律服务等，拥有丰富的项目实操经验。</p>
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="徐春国.jpg" alt="徐春国">
+                    <div class="team-name">
+                        <h4>徐春国</h4>
+                        <span class="team-title">律师</span>
+                    </div>
+                </div>
+                <div class="team-summary">专业领域：不良资产处置与重组、公司综合业务、金融法律服务等</div>
+                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
+                <div class="team-bio">
+                    <div class="team-bio-inner">
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">不良资产处置与重组</span><span class="tag">公司综合业务</span><span class="tag">金融法律服务</span></div>
+                        <p class="bio-label">执业简介</p>
+                        <p>长期深耕不良资产处置与重组、公司综合业务及金融法律服务，拥有丰富的项目实操经验。</p>
+                    </div>
                 </div>
             </div>
-            <div style="background:#f8f9fa;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                <img src="薛家涛.jpg" alt="薛家涛" style="width:100%;height:300px;object-fit:cover;">
-                <div style="padding:24px;">
-                    <h4 style="font-size:18px;margin-bottom:4px;color:#1a1a2e;">薛家涛</h4>
-                    <p style="font-size:13px;color:#9c231b;margin-bottom:12px;">律师</p>
-                    <p style="font-size:14px;line-height:1.7;color:#666;">专业领域：民商事诉讼、刑事诉讼、不良资产处置等，执业以来代理多起重大复杂案件。</p>
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="薛家涛.jpg" alt="薛家涛">
+                    <div class="team-name">
+                        <h4>薛家涛</h4>
+                        <span class="team-title">律师</span>
+                    </div>
+                </div>
+                <div class="team-summary">专业领域：民商事诉讼、刑事诉讼、不良资产处置等</div>
+                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
+                <div class="team-bio">
+                    <div class="team-bio-inner">
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">民商事诉讼</span><span class="tag">刑事诉讼</span><span class="tag">不良资产处置</span></div>
+                        <p class="bio-label">执业简介</p>
+                        <p>执业以来代理多起重大复杂案件，专业领域涵盖民商事诉讼、刑事诉讼及不良资产处置等。</p>
+                    </div>
                 </div>
             </div>
-            <div style="background:#f8f9fa;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                <img src="边楚玥.jpg" alt="边楚玥" style="width:100%;height:300px;object-fit:cover;object-position:center top;">
-                <div style="padding:24px;">
-                    <h4 style="font-size:18px;margin-bottom:4px;color:#1a1a2e;">边楚玥</h4>
-                    <p style="font-size:13px;color:#9c231b;margin-bottom:12px;">律师</p>
-                    <p style="font-size:14px;line-height:1.7;color:#666;">专业领域：资本市场与证券、公司与并购、民商事诉讼与仲裁、企业常年法律顾问等；中共党员，兼具最高人民法院书记员与上市公司法务管理经验，服务客户以上市公司为主。</p>
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="边楚玥.jpg" alt="边楚玥">
+                    <div class="team-name">
+                        <h4>边楚玥</h4>
+                        <span class="team-title">律师</span>
+                    </div>
+                </div>
+                <div class="team-summary">专业领域：资本市场与证券、公司与并购、民商事诉讼与仲裁、企业常年法律顾问等</div>
+                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
+                <div class="team-bio">
+                    <div class="team-bio-inner">
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">资本市场与证券</span><span class="tag">公司与并购</span><span class="tag">民商事诉讼与仲裁</span><span class="tag">企业常年法律顾问</span></div>
+                        <p class="bio-label">个人简介</p>
+                        <p>中共党员，兼具最高人民法院书记员、上市公司法务管理经验及十余年执业律师工作资历。服务客户以上市公司为主，在国有资产监管规则及上市公司资本运作领域拥有丰富的实战经验，曾参与多家央企、国企及民营上市公司的资本运作项目。</p>
+                        <p class="bio-label">执业经验</p>
+                        <p>2007–2012 最高人民法院 · 书记员<br>2013–2014 北京市安和利律师事务所 · 专职律师<br>2015–2016 北京市君都律师事务所 · 专职律师<br>2017–2023 北京市嘉源律师事务所 · 专职律师<br>2024–2025 某环保行业上市公司 · 法务部部长<br>2026至今 北京中晓律师事务所 · 专职律师</p>
+                        <p class="bio-label">教育背景</p>
+                        <p>华北理工大学 · 法学学士（2007）<br>中国政法大学 · 法律硕士（2013）</p>
+                        <p class="bio-label">专业资格</p>
+                        <p>律师执业资格证书、证券从业资格证书、基金从业资格证书、企业合规师证书（国家市场监督管理总局认证）</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <p style="text-align:center;margin-top:40px;color:#999;font-size:13px;">更多律师信息正在更新中，敬请期待</p>
+        <p class="team-more">更多律师信息正在更新中，敬请期待</p>
     </div>
 </section>
     <footer class="footer">
@@ -749,6 +854,15 @@ document.querySelectorAll('.nav a').forEach(function(link) {
     link.addEventListener('click', function() {
         var nav = document.getElementById('nav');
         if (nav) nav.classList.remove('open');
+    });
+});
+
+// Team 简介展开/收起
+document.querySelectorAll('.team-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var card = btn.closest('.team-card');
+        var isOpen = card.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 });
 
