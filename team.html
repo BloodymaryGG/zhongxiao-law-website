@@ -364,39 +364,74 @@
         }
         .team-toggle {
             display: flex; align-items: center; justify-content: center; gap: 6px;
-            width: calc(100% - 40px); margin: 14px 20px 0;
+            width: calc(100% - 40px); margin: 14px 20px 20px;
             padding: 9px 0;
             font-size: 13px; color: #9c231b;
-            background: none; border: 1px dashed #d8b4b0;
+            background: #fdf4f3; border: 1px solid #e8c6c1;
             border-radius: 8px; cursor: pointer;
             transition: all .3s ease;
         }
-        .team-toggle:hover { background: #fdf4f3; }
-        .team-arrow { display: inline-block; transition: transform .3s ease; }
-        .team-card.open .team-arrow { transform: rotate(180deg); }
-        .team-card.open .team-toggle { border-style: solid; background: #fdf4f3; }
-        .team-bio {
-            max-height: 0; overflow: hidden;
-            transition: max-height .45s ease;
+        .team-toggle:hover { background: #f9e8e5; }
+        /* ===== Team Modal ===== */
+        .team-modal-overlay {
+            position: fixed; inset: 0; z-index: 300;
+            background: rgba(15,18,32,0.55);
+            display: none; align-items: center; justify-content: center;
+            padding: 24px;
         }
-        .team-card.open .team-bio { max-height: 760px; }
-        .team-bio-inner {
-            padding: 14px 20px 22px;
-            font-size: 13px; color: #666; line-height: 1.9;
-            border-top: 1px solid #f0f0f0;
+        .team-modal-overlay.open { display: flex; }
+        .team-modal {
+            background: #fff; border-radius: 16px;
+            max-width: 880px; width: 100%;
+            max-height: 88vh; overflow: auto;
+            position: relative;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+            animation: modalIn .28s ease;
         }
-        .team-card .team-bio-inner p { margin: 6px 0; }
-        .team-card .team-bio-inner .bio-label {
-            font-weight: 700; color: #1a1a2e; margin-top: 10px;
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(18px) scale(.98); }
+            to { opacity: 1; transform: none; }
         }
-        .team-card .team-bio-inner .tag-row { margin: 4px 0 0; }
-        .team-card .team-bio-inner .tag {
-            display: inline-block; margin: 3px 6px 0 0; padding: 2px 10px;
+        .team-modal-close {
+            position: absolute; top: 12px; right: 14px; z-index: 3;
+            width: 36px; height: 36px; border-radius: 50%;
+            border: none; background: rgba(255,255,255,0.92); color: #333;
+            font-size: 20px; line-height: 1; cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+            transition: transform .2s ease;
+        }
+        .team-modal-close:hover { transform: rotate(90deg); }
+        .team-modal-grid { display: grid; grid-template-columns: 300px 1fr; }
+        .team-modal-photo { min-height: 100%; background: #f0f0f0; }
+        .team-modal-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+        }
+        .team-modal-info { padding: 34px 36px; }
+        .team-modal-info h3 { font-size: 26px; color: #1a1a2e; letter-spacing: 1px; }
+        .team-modal-info .team-modal-t {
+            display: inline-block; margin: 8px 0 18px;
+            font-size: 12px; letter-spacing: 2px; color: #9c231b;
+            border: 1px solid #d8b4b0; border-radius: 20px; padding: 2px 12px;
+        }
+        .team-modal-info .bio-label {
+            font-weight: 700; color: #1a1a2e; margin-top: 16px;
+            font-size: 14px;
+        }
+        .team-modal-info p { margin: 6px 0; font-size: 14px; color: #555; line-height: 1.9; }
+        .team-modal-info .tag-row { margin: 6px 0 0; }
+        .team-modal-info .tag {
+            display: inline-block; margin: 3px 6px 0 0; padding: 3px 12px;
             background: #f0f4fa; color: #2c4a7c; border-radius: 20px; font-size: 12px;
         }
         .page-body .team-more {
             text-align: center; margin-top: 40px;
             color: #999; font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            .team-modal-grid { grid-template-columns: 1fr; }
+            .team-modal-photo { max-height: 340px; }
+            .team-modal-info { padding: 24px 20px; }
         }
 
         /* ===== SVG Icons ===== */
@@ -703,15 +738,7 @@
                     </div>
                 </div>
                 <div class="team-summary">专业领域：民商事诉讼与仲裁、不良资产处置等</div>
-                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
-                <div class="team-bio">
-                    <div class="team-bio-inner">
-                        <p class="bio-label">专业领域</p>
-                        <div class="tag-row"><span class="tag">民商事诉讼与仲裁</span><span class="tag">不良资产处置</span></div>
-                        <p class="bio-label">执业简介</p>
-                        <p>长期专注于民商事诉讼与仲裁、不良资产处置等领域的法律服务，具有丰富的实务经验和深厚的理论功底。</p>
-                    </div>
-                </div>
+                <button class="team-toggle" type="button" data-target="modal-孙国华">查看简介 <span class="team-arrow">›</span></button>
             </div>
             <div class="team-card">
                 <div class="team-photo">
@@ -722,15 +749,7 @@
                     </div>
                 </div>
                 <div class="team-summary">专业领域：不良资产处置与重组、公司综合业务、金融法律服务等</div>
-                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
-                <div class="team-bio">
-                    <div class="team-bio-inner">
-                        <p class="bio-label">专业领域</p>
-                        <div class="tag-row"><span class="tag">不良资产处置与重组</span><span class="tag">公司综合业务</span><span class="tag">金融法律服务</span></div>
-                        <p class="bio-label">执业简介</p>
-                        <p>长期深耕不良资产处置与重组、公司综合业务及金融法律服务，拥有丰富的项目实操经验。</p>
-                    </div>
-                </div>
+                <button class="team-toggle" type="button" data-target="modal-徐春国">查看简介 <span class="team-arrow">›</span></button>
             </div>
             <div class="team-card">
                 <div class="team-photo">
@@ -741,15 +760,7 @@
                     </div>
                 </div>
                 <div class="team-summary">专业领域：民商事诉讼、刑事诉讼、不良资产处置等</div>
-                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
-                <div class="team-bio">
-                    <div class="team-bio-inner">
-                        <p class="bio-label">专业领域</p>
-                        <div class="tag-row"><span class="tag">民商事诉讼</span><span class="tag">刑事诉讼</span><span class="tag">不良资产处置</span></div>
-                        <p class="bio-label">执业简介</p>
-                        <p>执业以来代理多起重大复杂案件，专业领域涵盖民商事诉讼、刑事诉讼及不良资产处置等。</p>
-                    </div>
-                </div>
+                <button class="team-toggle" type="button" data-target="modal-薛家涛">查看简介 <span class="team-arrow">›</span></button>
             </div>
             <div class="team-card">
                 <div class="team-photo">
@@ -760,9 +771,70 @@
                     </div>
                 </div>
                 <div class="team-summary">专业领域：资本市场与证券、公司与并购、民商事诉讼与仲裁、企业常年法律顾问等</div>
-                <button class="team-toggle" type="button" aria-expanded="false">查看简介 <span class="team-arrow">▾</span></button>
-                <div class="team-bio">
-                    <div class="team-bio-inner">
+                <button class="team-toggle" type="button" data-target="modal-边楚玥">查看简介 <span class="team-arrow">›</span></button>
+            </div>
+        </div>
+
+        <!-- 律师简介弹窗 -->
+        <div class="team-modal-overlay" id="modal-孙国华" role="dialog" aria-modal="true" aria-label="孙国华简介">
+            <div class="team-modal">
+                <button class="team-modal-close" type="button" aria-label="关闭">×</button>
+                <div class="team-modal-grid">
+                    <div class="team-modal-photo"><img src="孙国华.jpg" alt="孙国华"></div>
+                    <div class="team-modal-info">
+                        <h3>孙国华</h3>
+                        <span class="team-modal-t">律师</span>
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">民商事诉讼与仲裁</span><span class="tag">不良资产处置</span></div>
+                        <p class="bio-label">执业简介</p>
+                        <p>长期专注于民商事诉讼与仲裁、不良资产处置等领域的法律服务，具有丰富的实务经验和深厚的理论功底。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-modal-overlay" id="modal-徐春国" role="dialog" aria-modal="true" aria-label="徐春国简介">
+            <div class="team-modal">
+                <button class="team-modal-close" type="button" aria-label="关闭">×</button>
+                <div class="team-modal-grid">
+                    <div class="team-modal-photo"><img src="徐春国.jpg" alt="徐春国"></div>
+                    <div class="team-modal-info">
+                        <h3>徐春国</h3>
+                        <span class="team-modal-t">律师</span>
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">不良资产处置与重组</span><span class="tag">公司综合业务</span><span class="tag">金融法律服务</span></div>
+                        <p class="bio-label">执业简介</p>
+                        <p>长期深耕不良资产处置与重组、公司综合业务及金融法律服务，拥有丰富的项目实操经验。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-modal-overlay" id="modal-薛家涛" role="dialog" aria-modal="true" aria-label="薛家涛简介">
+            <div class="team-modal">
+                <button class="team-modal-close" type="button" aria-label="关闭">×</button>
+                <div class="team-modal-grid">
+                    <div class="team-modal-photo"><img src="薛家涛.jpg" alt="薛家涛"></div>
+                    <div class="team-modal-info">
+                        <h3>薛家涛</h3>
+                        <span class="team-modal-t">律师</span>
+                        <p class="bio-label">专业领域</p>
+                        <div class="tag-row"><span class="tag">民商事诉讼</span><span class="tag">刑事诉讼</span><span class="tag">不良资产处置</span></div>
+                        <p class="bio-label">执业简介</p>
+                        <p>执业以来代理多起重大复杂案件，专业领域涵盖民商事诉讼、刑事诉讼及不良资产处置等。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-modal-overlay" id="modal-边楚玥" role="dialog" aria-modal="true" aria-label="边楚玥简介">
+            <div class="team-modal">
+                <button class="team-modal-close" type="button" aria-label="关闭">×</button>
+                <div class="team-modal-grid">
+                    <div class="team-modal-photo"><img src="边楚玥.jpg" alt="边楚玥"></div>
+                    <div class="team-modal-info">
+                        <h3>边楚玥</h3>
+                        <span class="team-modal-t">律师</span>
                         <p class="bio-label">专业领域</p>
                         <div class="tag-row"><span class="tag">资本市场与证券</span><span class="tag">公司与并购</span><span class="tag">民商事诉讼与仲裁</span><span class="tag">企业常年法律顾问</span></div>
                         <p class="bio-label">个人简介</p>
@@ -777,6 +849,7 @@
                 </div>
             </div>
         </div>
+
         <p class="team-more">更多律师信息正在更新中，敬请期待</p>
     </div>
 </section>
@@ -857,13 +930,29 @@ document.querySelectorAll('.nav a').forEach(function(link) {
     });
 });
 
-// Team 简介展开/收起
+// Team 简介弹窗
 document.querySelectorAll('.team-toggle').forEach(function(btn) {
     btn.addEventListener('click', function() {
-        var card = btn.closest('.team-card');
-        var isOpen = card.classList.toggle('open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        var modal = document.getElementById(btn.getAttribute('data-target'));
+        if (modal) modal.classList.add('open');
     });
+});
+document.querySelectorAll('.team-modal-close').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        btn.closest('.team-modal-overlay').classList.remove('open');
+    });
+});
+document.querySelectorAll('.team-modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) overlay.classList.remove('open');
+    });
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.team-modal-overlay.open').forEach(function(overlay) {
+            overlay.classList.remove('open');
+        });
+    }
 });
 
 
