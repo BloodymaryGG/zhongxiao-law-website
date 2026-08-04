@@ -18,13 +18,26 @@
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
     <style>
+:root {
+  --color-primary: #291943;
+  --color-primary-hover: #3d2663;
+  --color-secondary: #881C3C;
+  --color-accent: #CB6172;
+  --color-muted: #9C8BA7;
+  --color-bg-main: #F9F8FA;
+  --color-card-bg: #FFFFFF;
+  --color-text-primary: #1D132D;
+  --color-text-secondary: #635773;
+  --color-border: rgba(156, 139, 167, 0.2);
+}
+
 
         /* ===== Reset & Base ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-            color: #333;
+            color: #1D132D;
             background: #fff;
             line-height: 1.6;
         }
@@ -38,11 +51,11 @@
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             background: rgba(255,255,255,0.97);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #E7E2EE;
             height: 76px;
             transition: box-shadow 0.3s;
         }
-        .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        .header.scrolled { box-shadow: 0 2px 20px rgba(41,25,67,0.06); }
         .header-inner {
             display: flex; align-items: center; justify-content: space-between;
             height: 76px;
@@ -55,11 +68,11 @@
             border-radius: 4px;
         }
         .logo-text {
-            font-size: 20px; font-weight: 700; color: #1a1a1a;
+            font-size: 20px; font-weight: 700; color: #1D132D;
             letter-spacing: 2px;
         }
         .logo-sub {
-            font-size: 11px; color: #999; letter-spacing: 1px;
+            font-size: 11px; color: #9C8BA7; letter-spacing: 1px;
             margin-top: 2px;
         }
 
@@ -67,17 +80,17 @@
         .nav { display: flex; gap: 4px; }
         .nav a {
             padding: 8px 18px;
-            font-size: 15px; color: #444;
+            font-size: 15px; color: #635773;
             border-radius: 6px;
             transition: all 0.2s;
             position: relative;
         }
         .nav a:hover,
-        .nav a.active { color: #9c231b; background: rgba(156,35,27,0.06); }
+        .nav a.active { color: #881C3C; background: rgba(136,28,60,0.06); }
         .nav a::after {
             content: ''; position: absolute; bottom: -2px; left: 50%;
             width: 0; height: 2px;
-            background: #9c231b; border-radius: 2px;
+            background: #881C3C; border-radius: 2px;
             transition: all 0.3s; transform: translateX(-50%);
         }
         .nav a:hover::after,
@@ -91,7 +104,7 @@
         }
         .menu-toggle span {
             display: block; width: 24px; height: 2px;
-            background: #333; border-radius: 2px;
+            background: #1D132D; border-radius: 2px;
             transition: all 0.3s;
         }
 
@@ -99,7 +112,7 @@
         .hero {
             margin-top: 76px;
             height: 640px;
-            background: #1a1a2e;
+            background: #291943;
             position: relative;
             overflow: hidden;
             display: flex; align-items: center;
@@ -111,13 +124,13 @@
         }
         .hero-bg::after {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 100%);
+            background: linear-gradient(135deg, rgba(41,25,67,0.3) 0%, rgba(41,25,67,0.15) 100%);
         }
         .hero::before {
             content: ''; position: absolute;
             top: -50%; right: -15%;
             width: 900px; height: 900px;
-            background: radial-gradient(circle, rgba(192,57,43,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(136,28,60,0.12) 0%, transparent 70%);
             z-index: 1;
         }
         .hero::after {
@@ -165,12 +178,12 @@
             letter-spacing: 8px;
         }
         .hero h1 .em {
-            font-weight: 700; color: #9c231b;
+            font-weight: 700; color: #881C3C;
             letter-spacing: 4px;
         }
         .hero-accent {
             width: 40px; height: 2px;
-            background: #9c231b;
+            background: #881C3C;
             margin: 32px auto;
         }
         .hero p {
@@ -189,10 +202,10 @@
             border: none; min-width: 160px;
         }
         .btn-primary {
-            background: #9c231b; color: #fff;
+            background: #881C3C; color: #fff;
         }
         .btn-primary:hover {
-            background: #7d1c16;
+            background: #6E1630;
         }
         .btn-outline {
             background: transparent; color: #fff;
@@ -209,16 +222,16 @@
             text-align: center; margin-bottom: 60px;
         }
         .section-header h2 {
-            font-size: 32px; font-weight: 700; color: #1a1a1a;
+            font-size: 32px; font-weight: 700; color: #1D132D;
             letter-spacing: 2px; margin-bottom: 8px;
         }
         .section-header .en-sub {
-            font-size: 13px; color: #aaa; letter-spacing: 4px;
+            font-size: 13px; color: #9C8BA7; letter-spacing: 4px;
             text-transform: uppercase;
         }
         .section-header .divider {
             width: 60px; height: 3px;
-            background: #9c231b; border-radius: 3px;
+            background: #881C3C; border-radius: 3px;
             margin: 16px auto 0;
         }
 
@@ -230,7 +243,7 @@
             align-items: center;
         }
         .about-image {
-            border-radius: 12px; overflow: hidden;
+            border-radius:6px; overflow: hidden;
             height: 420px;
             position: relative;
         }
@@ -239,11 +252,11 @@
             object-fit: cover;
         }
         .about-text h3 {
-            font-size: 24px; font-weight: 700; color: #1a1a1a;
+            font-size: 24px; font-weight: 700; color: #1D132D;
             margin-bottom: 20px;
         }
         .about-text p {
-            color: #666; line-height: 2;
+            color: #635773; line-height: 2;
             font-size: 15px; margin-bottom: 16px;
         }
         .about-stats {
@@ -253,58 +266,58 @@
         }
         .about-stat {
             text-align: center; padding: 20px;
-            background: #f8f8f8; border-radius: 12px;
+            background: #f8f8f8; border-radius:6px;
         }
         .about-stat .num {
-            font-size: 32px; font-weight: 700; color: #9c231b;
+            font-size: 32px; font-weight: 700; color: #881C3C;
             line-height: 1;
         }
         .about-stat .label {
-            font-size: 13px; color: #999; margin-top: 8px;
+            font-size: 13px; color: #9C8BA7; margin-top: 8px;
         }
         .btn-about {
             margin-top: 32px;
             display: inline-flex; align-items: center; gap: 6px;
-            color: #9c231b; font-weight: 600; font-size: 15px;
+            color: #881C3C; font-weight: 600; font-size: 15px;
             padding: 10px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.2s;
         }
-        .btn-about:hover { border-bottom-color: #9c231b; }
+        .btn-about:hover { border-bottom-color: #881C3C; }
 
         /* ===== Practice Areas ===== */
-        .section-practice { background: #f8f9fb; }
+        .section-practice { background: #F9F8FA; }
         .practice-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
         .practice-card {
-            background: #fff; border-radius: 12px;
+            background: #fff; border-radius:6px;
             padding: 36px 28px;
             transition: all 0.3s;
-            border: 1px solid #eee;
+            border: 1px solid #E7E2EE;
             cursor: default;
         }
         .practice-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-            border-color: #9c231b;
+            box-shadow: 0 12px 40px rgba(41,25,67,0.06);
+            border-color: #881C3C;
         }
         .practice-card .icon {
             width: 52px; height: 52px;
-            background: #9c231b;
-            border-radius: 12px;
+            background: #881C3C;
+            border-radius:6px;
             display: flex; align-items: center; justify-content: center;
             font-size: 24px; color: #fff;
             margin-bottom: 20px;
         }
         .practice-card h4 {
-            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            font-size: 18px; font-weight: 700; color: #1D132D;
             margin-bottom: 12px;
         }
         .practice-card p {
-            font-size: 14px; color: #777;
+            font-size: 14px; color: #635773;
             line-height: 1.8;
         }
 
@@ -315,32 +328,32 @@
             gap: 28px;
         }
         .team-card {
-            text-align: center; border-radius: 12px;
+            text-align: center; border-radius:6px;
             padding: 32px 20px 24px;
             transition: all 0.3s;
-            border: 1px solid #eee;
+            border: 1px solid #E7E2EE;
         }
         .team-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-            border-color: #ddd;
+            box-shadow: 0 8px 30px rgba(41,25,67,0.05);
+            border-color: #E3DFE9;
         }
         .team-card .photo {
             width: 100px; height: 100px;
             border-radius: 50%;
             margin: 0 auto 16px;
             object-fit: cover;
-            border: 3px solid #f0f0f0;
+            border: 3px solid #F1EEF5;
         }
         .team-card h4 {
-            font-size: 17px; font-weight: 700; color: #1a1a1a;
+            font-size: 17px; font-weight: 700; color: #1D132D;
             margin-bottom: 4px;
         }
         .team-card .title {
-            font-size: 13px; color: #9c231b; font-weight: 500;
+            font-size: 13px; color: #881C3C; font-weight: 500;
             margin-bottom: 12px;
         }
         .team-card p {
-            font-size: 13px; color: #888;
+            font-size: 13px; color: #9C8BA7;
             line-height: 1.6;
         }
 
@@ -356,27 +369,27 @@
         .icon-xl { width: 28px; height: 28px; }
 
         /* ===== News/Articles ===== */
-        .section-news { background: #f8f9fb; }
+        .section-news { background: #F9F8FA; }
         .news-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
         .news-column h5 {
-            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            font-size: 18px; font-weight: 700; color: #1D132D;
             margin-bottom: 20px;
             padding-bottom: 12px;
-            border-bottom: 2px solid #e0e0e0;
+            border-bottom: 2px solid #E3DFE9;
             display: flex; align-items: center; gap: 8px;
         }
         .news-column h5::before {
             content: ''; display: inline-block;
             width: 4px; height: 18px;
-            background: #9c231b; border-radius: 4px;
+            background: #881C3C; border-radius: 4px;
         }
         .news-item {
             padding: 18px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #E7E2EE;
             transition: all 0.2s;
         }
         .news-item:last-child { border-bottom: none; }
@@ -385,17 +398,17 @@
             display: block;
         }
         .news-item .date {
-            font-size: 12px; color: #aaa; margin-bottom: 6px;
+            font-size: 12px; color: #9C8BA7; margin-bottom: 6px;
         }
         .news-item h6 {
-            font-size: 15px; font-weight: 600; color: #333;
+            font-size: 15px; font-weight: 600; color: #1D132D;
             line-height: 1.5; margin-bottom: 6px;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        .news-item h6:hover { color: #9c231b; }
+        .news-item h6:hover { color: #881C3C; }
         .news-item .summary {
-            font-size: 13px; color: #888;
+            font-size: 13px; color: #9C8BA7;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -407,7 +420,7 @@
             gap: 48px;
         }
         .contact-info h4 {
-            font-size: 20px; font-weight: 700; color: #1a1a1a;
+            font-size: 20px; font-weight: 700; color: #1D132D;
             margin-bottom: 24px;
         }
         .contact-item {
@@ -415,58 +428,58 @@
         }
         .contact-item .ci-icon {
             width: 44px; height: 44px; min-width: 44px;
-            background: #f0f0f0; border-radius: 10px;
+            background: #F1EEF5; border-radius:6px;
             display: flex; align-items: center; justify-content: center;
             font-size: 18px;
         }
         .contact-item .ci-label {
-            font-size: 13px; color: #999; margin-bottom: 2px;
+            font-size: 13px; color: #9C8BA7; margin-bottom: 2px;
         }
         .contact-item .ci-value {
-            font-size: 15px; color: #333; font-weight: 500;
+            font-size: 15px; color: #1D132D; font-weight: 500;
         }
         .contact-form {
-            background: #f8f9fb; padding: 36px 32px;
-            border-radius: 12px;
+            background: #F9F8FA; padding: 36px 32px;
+            border-radius:6px;
         }
         .contact-form h4 {
-            font-size: 18px; font-weight: 700; color: #1a1a1a;
+            font-size: 18px; font-weight: 700; color: #1D132D;
             margin-bottom: 24px;
         }
         .form-group { margin-bottom: 16px; }
         .form-group input,
         .form-group textarea {
             width: 100%; padding: 12px 16px;
-            border: 1.5px solid #e0e0e0; border-radius: 8px;
+            border: 1.5px solid #E3DFE9; border-radius: 8px;
             font-size: 14px; font-family: inherit;
             transition: border-color 0.2s;
             background: #fff;
         }
         .form-group input:focus,
         .form-group textarea:focus {
-            outline: none; border-color: #9c231b;
+            outline: none; border-color: #881C3C;
         }
         .form-group textarea { height: 120px; resize: vertical; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .btn-submit {
             width: 100%; padding: 14px;
-            background: #9c231b; color: #fff;
+            background: #881C3C; color: #fff;
             border: none; border-radius: 8px;
             font-size: 15px; font-weight: 600;
             cursor: pointer; transition: all 0.3s;
         }
-        .btn-submit:hover { background: #7d1c16; }
+        .btn-submit:hover { background: #6E1630; }
 
         /* ===== Map placeholder ===== */
         .map-section {
             height: 350px;
-            background: #eee;
+            background: #E7E2EE;
             overflow: hidden;
         }
 
         /* ===== Footer ===== */
         .footer {
-            background: #1a1a2e; color: #fff;
+            background: #291943; color: #fff;
             padding: 50px 0 30px;
         }
         .footer-grid {
@@ -483,7 +496,7 @@
             font-size: 14px; color: rgba(255,255,255,0.6);
             line-height: 2;
         }
-        .footer a:hover { color: #9c231b; }
+        .footer a:hover { color: #881C3C; }
         .footer .qr { margin-top: 16px; }
         .footer .qr img {
             width: 100px; height: 100px;
@@ -503,10 +516,10 @@
         .scroll-top {
             position: fixed; bottom: 32px; right: 32px;
             width: 44px; height: 44px;
-            background: #9c231b; color: #fff;
+            background: #881C3C; color: #fff;
             border: none; border-radius: 50%;
             font-size: 20px; cursor: pointer;
-            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+            box-shadow: 0 4px 16px rgba(136,28,60,0.3);
             opacity: 0; visibility: hidden;
             transition: all 0.3s;
             z-index: 99;
@@ -532,8 +545,8 @@
                 position: fixed; top: 76px; left: 0; right: 0;
                 background: #fff; flex-direction: column;
                 padding: 16px; gap: 0;
-                border-bottom: 1px solid #eee;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+                border-bottom: 1px solid #E7E2EE;
+                box-shadow: 0 8px 24px rgba(41,25,67,0.06);
                 transform: translateY(-120%);
                 transition: transform 0.3s;
                 z-index: 99;
@@ -541,7 +554,7 @@
             .nav.open { transform: translateY(0); }
             .nav a {
                 padding: 14px 16px;
-                border-bottom: 1px solid #f0f0f0;
+                border-bottom: 1px solid #F1EEF5;
                 border-radius: 0;
             }
             .nav a:last-child { border-bottom: none; }
@@ -562,7 +575,7 @@
 .page-header {
     margin-top: 76px;
     padding: 100px 0 60px;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: linear-gradient(135deg, #291943, #3D2663);
     color: #fff;
     text-align: center;
     position: relative;
@@ -584,7 +597,7 @@
 }
 .page-header .divider {
     width: 40px; height: 2px;
-    background: #9c231b; margin: 20px auto 0;
+    background: #881C3C; margin: 20px auto 0;
     position: relative; z-index: 1;
 }
 .page-body {
@@ -596,7 +609,7 @@
     padding: 0 24px;
 }
 .page-body p {
-    font-size: 15px; line-height: 1.9; color: #444;
+    font-size: 15px; line-height: 1.9; color: #635773;
     margin-bottom: 16px;
 }
 @media (max-width: 768px) {
@@ -610,24 +623,24 @@
 .practice-card-item {
     background: #fff;
     border: 1px solid #e8e8e8;
-    border-radius: 10px;
+    border-radius:6px;
     padding: 28px 32px;
     transition: all 0.3s;
     cursor: default;
 }
 .practice-card-item:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    border-color: #9c231b;
+    box-shadow: 0 4px 20px rgba(41,25,67,0.06);
+    border-color: #881C3C;
 }
 .practice-card-item h4 {
     font-size: 17px;
     margin-bottom: 8px;
-    color: #1a1a2e;
+    color: #291943;
 }
 .practice-card-item p {
     font-size: 14px;
     line-height: 1.9;
-    color: #555;
+    color: #635773;
     margin: 0;
 }
 
@@ -669,61 +682,61 @@
         <div style="display:grid;grid-template-columns:1fr;gap:16px;">
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">银行、金融与证券</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">为商业银行、证券公司、信托公司等金融机构提供金融法律顾问、证券发行与上市、资产证券化、合规审查、金融争议解决等全流程法律服务。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">银行、金融与证券</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">为商业银行、证券公司、信托公司等金融机构提供金融法律顾问、证券发行与上市、资产证券化、合规审查、金融争议解决等全流程法律服务。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">公司法</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">企业常年法律顾问、公司治理与合规、股权架构设计与并购重组、合同审查、劳动争议处理等全方位的公司法律服务。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">公司法</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">企业常年法律顾问、公司治理与合规、股权架构设计与并购重组、合同审查、劳动争议处理等全方位的公司法律服务。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">知识产权</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">专利、商标、著作权的申请与保护、知识产权侵权诉讼、技术合同纠纷、商业秘密保护等。律所汇聚多名具备专利代理师执业资格的律师，确保提供精准、高效的法律支持。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">知识产权</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">专利、商标、著作权的申请与保护、知识产权侵权诉讼、技术合同纠纷、商业秘密保护等。律所汇聚多名具备专利代理师执业资格的律师，确保提供精准、高效的法律支持。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">破产重整</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">企业破产清算、破产重整、债务重组、破产管理人法律服务，为企业提供全流程破产法律解决方案。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">破产重整</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">企业破产清算、破产重整、债务重组、破产管理人法律服务，为企业提供全流程破产法律解决方案。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">不良资产处置</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">金融机构不良债权的尽职调查、定价、收购、重组及清收处置。中晓核心业务，处置资产遍布北京、上海、广州等各大城市，涉及资产规模过百亿，与平安银行、石嘴山银行等多家银行紧密合作。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">不良资产处置</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">金融机构不良债权的尽职调查、定价、收购、重组及清收处置。中晓核心业务，处置资产遍布北京、上海、广州等各大城市，涉及资产规模过百亿，与平安银行、石嘴山银行等多家银行紧密合作。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">婚姻与家事</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">离婚诉讼、财产分割、子女抚养权争议、遗产继承、家庭财产协议、家族财富传承规划等。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">婚姻与家事</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">离婚诉讼、财产分割、子女抚养权争议、遗产继承、家庭财产协议、家族财富传承规划等。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">劳动与社会保障</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">劳动争议仲裁与诉讼、劳动合同管理、社保合规、工伤认定与赔偿、企业裁员方案设计等。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">劳动与社会保障</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">劳动争议仲裁与诉讼、劳动合同管理、社保合规、工伤认定与赔偿、企业裁员方案设计等。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">民商事诉讼与仲裁</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">合同纠纷、债权债务、公司股权、房地产等民商事案件的诉讼代理与仲裁代理，拥有丰富的庭审及仲裁经验。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">民商事诉讼与仲裁</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">合同纠纷、债权债务、公司股权、房地产等民商事案件的诉讼代理与仲裁代理，拥有丰富的庭审及仲裁经验。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">刑事辩护</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">刑事案件的辩护与代理、刑事合规咨询、刑事控告、取保候审申请、无罪及罪轻辩护等。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">刑事辩护</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">刑事案件的辩护与代理、刑事合规咨询、刑事控告、取保候审申请、无罪及罪轻辩护等。</p>
             </div>
 
             <div class="practice-card-item">
-                <h4 style="font-size:17px;margin-bottom:8px;color:#1a1a2e;">公益法律服务与法律援助</h4>
-                <p style="font-size:14px;line-height:1.9;color:#555;margin:0;">开展公益法律咨询、法律援助案件代理、法制宣传与普法教育，积极履行律师社会责任。</p>
+                <h4 style="font-size:17px;margin-bottom:8px;color:#291943;">公益法律服务与法律援助</h4>
+                <p style="font-size:14px;line-height:1.9;color:#635773;margin:0;">开展公益法律咨询、法律援助案件代理、法制宣传与普法教育，积极履行律师社会责任。</p>
             </div>
 
         </div>
 
-        <div class="cta-section" style="text-align:center;margin-top:40px;padding:32px;background:#f8f9fa;border-radius:10px;">
-            <h4 style="font-size:17px;margin-bottom:10px;color:#1a1a2e;">需要法律帮助？</h4>
-            <p style="font-size:14px;color:#666;margin-bottom:18px;">中晓律师事务所为您提供专业、高效的法律解决方案</p>
-            <a href="/contact.html" style="display:inline-block;padding:12px 32px;background:#9c231b;color:#fff;text-decoration:none;border-radius:6px;font-size:15px;">免费咨询 →</a>
+        <div class="cta-section" style="text-align:center;margin-top:40px;padding:32px;background:#F9F8FA;border-radius:6px;">
+            <h4 style="font-size:17px;margin-bottom:10px;color:#291943;">需要法律帮助？</h4>
+            <p style="font-size:14px;color:#635773;margin-bottom:18px;">中晓律师事务所为您提供专业、高效的法律解决方案</p>
+            <a href="/contact.html" style="display:inline-block;padding:12px 32px;background:#881C3C;color:#fff;text-decoration:none;border-radius:6px;font-size:15px;">免费咨询 →</a>
         </div>
     </div>
 </section> html>
